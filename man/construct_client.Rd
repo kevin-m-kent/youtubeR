@@ -16,10 +16,7 @@ an httr2 oauth client object
 Builds the oauth client object for google apis.
 }
 \details{
-Requires the following environment variables:
-
-CLIENT_ID
-CLIENT_SECRET
+Requires the following environment variables: CLIENT_ID, CLIENT_SECRET
 }
 \examples{
 

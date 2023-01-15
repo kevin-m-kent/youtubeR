@@ -2,10 +2,9 @@
 #'
 #' Builds the oauth client object for google apis.
 #'
-#' Requires the following environment variables:
+#' Requires the following environment variables: CLIENT_ID, CLIENT_SECRET
 #'
-#' CLIENT_ID
-#' CLIENT_SECRET
+#'
 #'
 #'
 #' @param token_url Google's oauth url
