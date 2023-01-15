@@ -3,7 +3,7 @@
 A package for interacting with the Youtube Data API. Right now, just uploading local videos and finding the status of uploaded videos.
 
 
-# Retrieving Video Status
+# Retrieving Video Status (oauth2 manual workflow)
 
 The goal here is to get the video status (if it is finished processing) for
 each video that has been uploaded.
