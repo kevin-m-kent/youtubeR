@@ -24,7 +24,8 @@
 #' video_path <- "my_video.mp4"
 #' 
 #' upload_video(google_client, snippet, video_path)
-upload_video <- function(client, snippet, video_path) {
+upload_video <- function(client, snippet, video_path, scope = "https://www.googleapis.com/auth/youtube", token_url = "https://oauth2.googleapis.com/token",
+                        auth_url = "https://accounts.google.com/o/oauth2/v2/auth") {
 
     req <- request("https://www.googleapis.com/upload/youtube/v3/videos?part=snippet&part=status")
 

@@ -4,7 +4,14 @@
 \alias{upload_video}
 \title{Upload a video to youtube}
 \usage{
-upload_video(client, snippet, video_path)
+upload_video(
+  client,
+  snippet,
+  video_path,
+  scope = "https://www.googleapis.com/auth/youtube",
+  token_url = "https://oauth2.googleapis.com/token",
+  auth_url = "https://accounts.google.com/o/oauth2/v2/auth"
+)
 }
 \arguments{
 \item{token_url}{Google's oauth url}
