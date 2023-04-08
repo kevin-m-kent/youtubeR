@@ -1,6 +1,6 @@
 # Youtube R
 
-A package for interacting with the Youtube Data API. Right now, just uploading local videos and finding the status of uploaded videos.
+A package for interacting with the Youtube Data API. Right now, just uploading local videos and finding the status of uploaded videos. The goal is to figure out how to do this non-interactively, but what is currently in the package is the interactive workflow.
 
 
 # Retrieving Video Status (oauth2 manual workflow)
