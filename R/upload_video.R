@@ -15,7 +15,7 @@
 #'
 #' google_client <- construct_client()
 #' 
-#' snippet <- list(snippet = list("title" = unbox("video kids test"),
+#' snippet <- list(snippet = list("title" = unbox("video test"),
 #'                        "description" = unbox("description_test"),
 #'                        "tags" = "kevin,kent"),
 #'  status = list("privacyStatus" = unbox("private"),

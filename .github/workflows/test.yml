@@ -29,6 +29,12 @@ jobs:
       with:
         r-version: ${{ matrix.config.r }}
 
+    - name: Install system dependencies
+      if: runner.os == 'Linux'
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y libcurl4-openssl-dev
+
     - uses: r-lib/actions/setup-pandoc@v1
 
     - name: Query dependencies
@@ -44,6 +50,8 @@ jobs:
         path: ${{ env.R_LIBS_USER }}
         key: ${{ runner.os }}-${{ matrix.config.r }}-1-${{ hashFiles('.github/R-version') }}-${{ hashFiles('.github/depends.Rds') }}
         restore-keys: ${{ runner.os }}-${{ matrix.config.r }}-1-${{ hashFiles('.github/R-version') }}-
+
+
 
     - name: Install dependencies
       run: |

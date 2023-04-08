@@ -38,7 +38,7 @@ Following a similar workflow, we can also upload videos to youtube. Assuming you
 
 ```
 
-snippet <- list(snippet = list("title" = unbox("video kids test"),
+snippet <- list(snippet = list("title" = unbox("video test"),
                     "description" = unbox("description_test"),
                     "tags" = "kevin,kent"),
 status = list("privacyStatus" = unbox("private"),
