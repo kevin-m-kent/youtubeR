@@ -43,9 +43,9 @@ snippet <- list(snippet = list("title" = unbox("video kids test"),
                     "tags" = "kevin,kent"),
 status = list("privacyStatus" = unbox("private"),
             "selfDeclaredMadeForKids" = unbox("false")))
-             
+
 video_path <- "path/to/video.mp4"
 
-upload_video(client = my_client, snippet, video_path)
+upload_video(my_client, snippet, video_path)
 
 ```
