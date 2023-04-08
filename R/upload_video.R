@@ -29,8 +29,7 @@ upload_video <- function(client, snippet, video_path, scope = "https://www.googl
 
     req <- request("https://www.googleapis.com/upload/youtube/v3/videos?part=snippet&part=status")
 
-    snippet_string <- list(snippet = snippet) %>%
-        jsonlite::toJSON()
+    snippet_string <- jsonlite::toJSON(snippet)
 
     metadata <- tempfile()
     writeLines(snippet_string, metadata)
