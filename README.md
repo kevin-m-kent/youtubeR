@@ -24,11 +24,11 @@ This will be used to complete each request. The workflow is as follows:
 - For each video, get the status
 
 ```
-my_playlist_id <- get_playlist_ids(my_client) 
+my_playlist_id <- get_playlist_ids(google_client) 
 
-video_ids <- purrr::map(my_playlist_id, get_video_ids, client = my_client)
+video_ids <- purrr::map(my_playlist_id, get_video_ids, client = google_client)
 
-video_details <- purrr::map(video_ids, get_video_status, client = my_client)
+video_details <- purrr::map(video_ids, get_video_status, client = google_client)
 
 ```
 
