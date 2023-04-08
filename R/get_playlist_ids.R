@@ -30,14 +30,8 @@ get_playlist_ids <- function(client, token_url = "https://oauth2.googleapis.com/
                                       token_params = list(scope=scope, grant_type="authorization_code"),
                                       host_name = "localhost",
                                       host_ip = "127.0.0.1",
-                                      #port = httpuv::randomPort()
                                       port = 8080,
   ) %>%
-    # # req_body_multipart(
-    #    list(
-    #      metadata = curl::form_file(path = metadata, type = "application/json; charset=UTF-8"),
-    #      media = curl::form_file("kkent intro.mp4"))
-    #  ) %>%
     httr2::req_perform()
 
   resp %>%
