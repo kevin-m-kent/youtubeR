@@ -1,20 +1,13 @@
 Package: youtubeR
-Type: Package
-Title: Automating Youtube Workflows 
-Version: 0.1.0
-Author: Kevin Kent
-Maintainer: The package maintainer <kentmkevin@gmail.com>
-Description: Getting youtube video descriptions and uploading videos.
-License: MIT
+Title: What the Package Does (One Line, Title Case)
+Version: 0.0.0.9000
+Authors@R: 
+    person("Kevin", "Kent", , "kentmkevin@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: What the package does (one paragraph).
+License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
+    license
 Encoding: UTF-8
-LazyData: true
-Imports: 
-    httr2,
-    jsonlite,
-    magrittr,
-    purrr
+Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
-Suggests: 
-    testthat (>= 3.0.0)
-Config/testthat/edition: 3
 URL: https://kevin-m-kent.github.io/youtubeR/
