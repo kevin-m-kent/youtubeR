@@ -27,7 +27,7 @@
 upload_video <- function(client, snippet, video_path, scope = "https://www.googleapis.com/auth/youtube", token_url = "https://oauth2.googleapis.com/token",
                         auth_url = "https://accounts.google.com/o/oauth2/v2/auth") {
 
-    req <- request("https://www.googleapis.com/upload/youtube/v3/videos?part=snippet&part=status")
+    req <- httr2::request("https://www.googleapis.com/upload/youtube/v3/videos?part=snippet&part=status")
 
     snippet_string <- jsonlite::toJSON(snippet)
 
@@ -45,16 +45,16 @@ upload_video <- function(client, snippet, video_path, scope = "https://www.googl
                                     host_ip = "127.0.0.1",
                                     port = 8080, 
         ) %>%
-        req_body_multipart(
+        httr2::req_body_multipart(
             list(
             metadata = curl::form_file(path = metadata, type = "application/json; charset=UTF-8"),
-            media = curl::form_file(vide_path))
+            media = curl::form_file(video_path))
         ) %>%
-        req_perform()
+        httr2::req_perform()
 
     videoId <- resp %>%
-        resp_body_json() %>%
-        pluck("id")
+        httr2::resp_body_json() %>%
+        purrr:::pluck("id")
 
     videoId
 

@@ -51,8 +51,6 @@ jobs:
         key: ${{ runner.os }}-${{ matrix.config.r }}-1-${{ hashFiles('.github/R-version') }}-${{ hashFiles('.github/depends.Rds') }}
         restore-keys: ${{ runner.os }}-${{ matrix.config.r }}-1-${{ hashFiles('.github/R-version') }}-
 
-
-
     - name: Install dependencies
       run: |
         install.packages("remotes")
