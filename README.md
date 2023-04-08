@@ -34,7 +34,7 @@ video_details <- purrr::map(video_ids, get_video_status, client = my_client)
 
 # Uploading Videos (oauth2 manual workflow)
 
-Following a similar workflow, we can also upload videos to youtube. Assuming you already have created the client as above, you will need a snippet and a video path. The snippet defines the title, description, and other metadata for the video. The video path is the path to the video file on your local machine. 
+Following a similar workflow, we can also upload videos to youtube. Assuming you already have created the client as above, you will need a snippet and a video path. The snippet defines the title, description, and other metadata for the video. The video path is the path to the video file on your local machine. See the [Youtube Data API](https://developers.google.com/youtube/v3/docs/videos) documentation for more information on the snippet object.
 
 ```
 
