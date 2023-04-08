@@ -1,0 +1,26 @@
+{
+    "id": "934F07D5",
+    "path": "~/Documents/youtubeR/R/get_playlist_ids.R",
+    "project_path": "R/get_playlist_ids.R",
+    "type": "r_source",
+    "hash": "3029454628",
+    "contents": "",
+    "dirty": false,
+    "created": 1673795164179.0,
+    "source_on_save": false,
+    "relative_order": 6,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "14,35",
+        "scrollLine": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1673797415,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1673797415148,
+    "read_only": false,
+    "read_only_alternatives": []
+}

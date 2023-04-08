@@ -1,0 +1,26 @@
+{
+    "id": "0F629CD0",
+    "path": "~/Documents/youtubeR/R/utils-pipe.R",
+    "project_path": "R/utils-pipe.R",
+    "type": "r_source",
+    "hash": "1170435873",
+    "contents": "",
+    "dirty": false,
+    "created": 1673796899390.0,
+    "source_on_save": false,
+    "relative_order": 8,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "13,4",
+        "scrollLine": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1673796712,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1673796712,
+    "read_only": false,
+    "read_only_alternatives": []
+}
