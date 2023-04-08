@@ -24,7 +24,6 @@ construct_client <- function(token_url = "https://oauth2.googleapis.com/token") 
   stopifnot(
       "YOUTUBE_CLIENT_ID environment variables must be set." = nchar(client_id) > 0,
      "YOUTUBE_CLIENT_SECRET environment variables must be set." = nchar(client_secret) > 0
-     
     )
 
   client <- httr2::oauth_client(id=  client_id,
