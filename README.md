@@ -38,13 +38,12 @@ Following a similar workflow, we can also upload videos to youtube. Assuming you
 
 ```
 
-snippet <- list(
-  title = "My Video Title",
-  description = "My Video Description",
-  tags = c("tag1", "tag2"),
-  categoryId = 22
-)
-
+snippet <- list(snippet = list("title" = unbox("video kids test"),
+                    "description" = unbox("description_test"),
+                    "tags" = "kevin,kent"),
+status = list("privacyStatus" = unbox("private"),
+            "selfDeclaredMadeForKids" = unbox("false")))
+             
 video_path <- "path/to/video.mp4"
 
 upload_video(client = my_client, snippet, video_path)

@@ -22,9 +22,13 @@ Requires the following environment variables: YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_
 
 google_client <- create_client()
 
-snippet <- list("title" = unbox("video kids test"),
-                      "description" = unbox("description_test"),
-                      "tags" = "kevin,kent"),
-status = list("privacyStatus" = unbox("private"),
-             "selfDeclaredMadeForKids" = unbox("false"))
+snippet <- list(snippet = list("title" = unbox("video kids test"),
+                       "description" = unbox("description_test"),
+                       "tags" = "kevin,kent"),
+ status = list("privacyStatus" = unbox("private"),
+              "selfDeclaredMadeForKids" = unbox("false"))) 
+
+video_path <- "my_video.mp4"
+
+upload_video(google_client, snippet, video_path)
 }
