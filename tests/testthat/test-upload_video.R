@@ -6,15 +6,13 @@ test_that("upload_video returns expected video ID with a mocked API", {
   # Create a custom response object using the mock data
   mock_response_object <- function(req)  {
 
-    browser()
-    
     json_text <- readLines("mock_upload_response.json")
-    mock_response <- jsonlite::fromJSON(paste(json_text, collapse = ""))
+
     
     httr2::response(
     status = 200,
     headers = list("Content-Type" = "application/json"),
-    body = mock_response
+    body = charToRaw(paste(json_text, collapse = ""))
   )
   }
 
@@ -23,7 +21,9 @@ test_that("upload_video returns expected video ID with a mocked API", {
   video_path <- "test.txt"
   # Use the custom response object to mock the API call
 
-  httr2::with_mock(mock_response_object,  upload_video(client, snippet, video_path))
+  video_id <- httr2::with_mock(mock_response_object,  upload_video(client, snippet, video_path))
+
+  expect_equal(video_id, "mockVideoId")
 }
 
 )
