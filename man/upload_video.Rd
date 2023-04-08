@@ -27,7 +27,7 @@ Requires the following environment variables: YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_
 }
 \examples{
 
-google_client <- create_client()
+google_client <- construct_client()
 
 snippet <- list(snippet = list("title" = unbox("video kids test"),
                        "description" = unbox("description_test"),

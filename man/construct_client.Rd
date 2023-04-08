@@ -20,5 +20,5 @@ Requires the following environment variables: YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_
 }
 \examples{
 
-google_client <- create_client()
+google_client <- construct_client()
 }

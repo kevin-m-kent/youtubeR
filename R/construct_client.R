@@ -15,7 +15,7 @@
 #'
 #' @examples
 #'
-#' google_client <- create_client()
+#' google_client <- construct_client()
 construct_client <- function(token_url = "https://oauth2.googleapis.com/token") {
 
   client_id <- Sys.getenv("YOUTUBE_CLIENT_ID")
