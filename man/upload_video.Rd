@@ -22,5 +22,9 @@ Requires the following environment variables: YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_
 
 google_client <- create_client()
 
-
+snippet <- list("title" = unbox("video kids test"),
+                      "description" = unbox("description_test"),
+                      "tags" = "kevin,kent"),
+status = list("privacyStatus" = unbox("private"),
+             "selfDeclaredMadeForKids" = unbox("false"))
 }
