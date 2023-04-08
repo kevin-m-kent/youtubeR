@@ -15,11 +15,15 @@
 #'
 #' google_client <- create_client()
 #' 
-#' snippet <- list("title" = unbox("video kids test"),
-#'                       "description" = unbox("description_test"),
-#'                       "tags" = "kevin,kent"),
-#' status = list("privacyStatus" = unbox("private"),
-#'              "selfDeclaredMadeForKids" = unbox("false"))
+#' snippet <- list(snippet = list("title" = unbox("video kids test"),
+#'                        "description" = unbox("description_test"),
+#'                        "tags" = "kevin,kent"),
+#'  status = list("privacyStatus" = unbox("private"),
+#'               "selfDeclaredMadeForKids" = unbox("false"))) 
+#' 
+#' video_path <- "my_video.mp4"
+#' 
+#' upload_video(google_client, snippet, video_path)
 upload_video <- function(client, snippet, video_path) {
 
     req <- request("https://www.googleapis.com/upload/youtube/v3/videos?part=snippet&part=status")
