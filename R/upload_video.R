@@ -13,7 +13,7 @@
 #'
 #' @examples
 #'
-#' google_client <- create_client()
+#' google_client <- construct_client()
 #' 
 #' snippet <- list(snippet = list("title" = unbox("video kids test"),
 #'                        "description" = unbox("description_test"),
