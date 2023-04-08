@@ -2,7 +2,7 @@
 #'
 #' Builds the oauth client object for google apis.
 #'
-#' Requires the following environment variables: CLIENT_ID, CLIENT_SECRET
+#' Requires the following environment variables: YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET
 #'
 #'
 #'
@@ -18,8 +18,8 @@
 #' google_client <- create_client()
 construct_client <- function(token_url = "https://oauth2.googleapis.com/token") {
 
-  client_id <- Sys.getenv("CLIENT_ID")
-  client_secret <- Sys.getenv("CLIENT_SECRET")
+  client_id <- Sys.getenv("YOUTUBE_CLIENT_ID")
+  client_secret <- Sys.getenv("YOUTUBE_CLIENT_SECRET")
 
   client <- httr2::oauth_client(id=  client_id,
                          token_url  = token_url,
