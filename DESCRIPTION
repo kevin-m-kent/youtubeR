@@ -10,13 +10,19 @@ Description: Manage YouTube videos from R.
 License: MIT + file LICENSE
 URL: https://kevin-m-kent.github.io/youtubeR/,
     https://github.com/kevin-m-kent/youtubeR
+BugReports: https://github.com/kevin-m-kent/youtubeR/issues
 Depends: 
     R (>= 4.1)
 Imports: 
-    httr2
+    cli,
+    glue,
+    httr2,
+    purrr,
+    rlang
 Suggests: 
     covr,
-    testthat (>= 3.0.0)
+    testthat (>= 3.0.0),
+    withr
 Config/testthat/edition: 3
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
