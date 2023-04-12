@@ -1,0 +1,36 @@
+{
+    "kind": "youtube#videoListResponse",
+    "etag": "PAxzdztC3eWFIufpBpApht0TAUQ",
+    "items": [
+        {
+            "kind": "youtube#video",
+            "etag": "IGvCOSeO3ZoYf9bLL64zoK6OfDk",
+            "id": "RGFQ7IaBv50",
+            "processingDetails": {
+                "processingStatus": "succeeded",
+                "fileDetailsAvailability": "available",
+                "processingIssuesAvailability": "available",
+                "tagSuggestionsAvailability": "inProgress",
+                "editorSuggestionsAvailability": "inProgress",
+                "thumbnailsAvailability": "available"
+            }
+        },
+        {
+            "kind": "youtube#video",
+            "etag": "MlHBN3FZ6UZKdR0znYI2NRSy6Mo",
+            "id": "zM4X1TS_EyU",
+            "processingDetails": {
+                "processingStatus": "succeeded",
+                "fileDetailsAvailability": "available",
+                "processingIssuesAvailability": "available",
+                "tagSuggestionsAvailability": "inProgress",
+                "editorSuggestionsAvailability": "inProgress",
+                "thumbnailsAvailability": "available"
+            }
+        }
+    ],
+    "pageInfo": {
+        "totalResults": 2,
+        "resultsPerPage": 2
+    }
+}
