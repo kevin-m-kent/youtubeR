@@ -44,16 +44,16 @@ upload_video <- function(client, snippet, video_path, scope = "https://www.googl
                                     host_name = "localhost",
                                     host_ip = "127.0.0.1",
                                     port = 8080, 
-        ) %>%
+        ) |>
         httr2::req_body_multipart(
             list(
             metadata = curl::form_file(path = metadata, type = "application/json; charset=UTF-8"),
             media = curl::form_file(video_path))
-        ) %>%
+        ) |>
         httr2::req_perform()
 
-    videoId <- resp %>%
-        httr2::resp_body_json() %>%
+    videoId <- resp |>
+        httr2::resp_body_json() |>
         purrr:::pluck("id")
 
     videoId

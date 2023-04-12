@@ -31,12 +31,12 @@ get_playlist_ids <- function(client, token_url = "https://oauth2.googleapis.com/
                                       host_name = "localhost",
                                       host_ip = "127.0.0.1",
                                       port = 8080,
-  ) %>%
+  ) |>
     httr2::req_perform()
 
-  resp %>%
-    httr2::resp_body_json() %>%
-    purrr::pluck("items") %>%
+  resp |>
+    httr2::resp_body_json() |>
+    purrr::pluck("items") |>
     purrr::map(~ purrr::pluck(.,"contentDetails", "relatedPlaylists", "uploads"))
 
 }

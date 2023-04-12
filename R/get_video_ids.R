@@ -35,18 +35,18 @@ get_video_ids <- function(playlist_id, client,  token_url = "https://oauth2.goog
                                         host_ip = "127.0.0.1",
                                         #port = httpuv::randomPort()
                                         port = 8080,
-  ) %>%
+  ) |>
     # # req_body_multipart(
     #    list(
     #      metadata = curl::form_file(path = metadata, type = "application/json; charset=UTF-8"),
     #      media = curl::form_file("kkent intro.mp4"))
-    #  ) %>%
+    #  ) |>
     httr2::req_perform()
 
-  all_ids <-  resp_2 %>%
-    httr2::resp_body_json() %>%
+  all_ids <-  resp_2 |>
+    httr2::resp_body_json() |>
 
-    purrr::pluck("items") %>%
+    purrr::pluck("items") |>
     purrr::map(~ purrr::pluck(.,"contentDetails",  "videoId"))
 
   all_ids

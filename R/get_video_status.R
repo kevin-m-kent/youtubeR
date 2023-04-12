@@ -24,7 +24,7 @@ get_video_status <- function(video_ids, client, token_url = "https://oauth2.goog
                              auth_url = "https://accounts.google.com/o/oauth2/v2/auth",
                              scope = "https://www.googleapis.com/auth/youtube") {
 
-  all_ids_csv <- video_ids %>%
+  all_ids_csv <- video_ids |>
     paste(collapse = ",")
 
   req_video_details <- httr2::request(glue::glue("https://youtube.googleapis.com/youtube/v3/videos?part=processingDetails&part=snippet%2CcontentDetails%2Cstatistics&id={all_ids_csv}"))
@@ -40,17 +40,17 @@ get_video_status <- function(video_ids, client, token_url = "https://oauth2.goog
                                               host_ip = "127.0.0.1",
                                               #port = httpuv::randomPort()
                                               port = 8080,
-  ) %>%
+  ) |>
     # # req_body_multipart(
     #    list(
     #      metadata = curl::form_file(path = metadata, type = "application/json; charset=UTF-8"),
     #      media = curl::form_file("kkent intro.mp4"))
-    #  ) %>%
+    #  ) |>
     httr2::req_perform()
 
-  video_details %>%
-    httr2::resp_body_json() %>%
-    purrr::pluck("items") %>%
+  video_details |>
+    httr2::resp_body_json() |>
+    purrr::pluck("items") |>
     purrr::map(~ purrr::pluck(.,"processingDetails"))
 
 
