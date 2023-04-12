@@ -7,13 +7,8 @@
 get_upload_playlist_id(token = fetch_token())
 }
 \arguments{
-\item{client}{an httr2 oauth2 client for the google api}
-
-\item{token_url}{google's oauth2 token url}
-
-\item{auth_url}{google's oauth2 auth url}
-
-\item{scope}{token scope, default is youtube}
+\item{token}{Your YouTube API token. We recommend passing this as a
+\code{YOUTUBE_TOKEN} environment variable.}
 }
 \value{
 list of playlist ids for uploads
