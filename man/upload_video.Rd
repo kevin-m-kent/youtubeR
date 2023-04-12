@@ -33,7 +33,7 @@ snippet <- list(snippet = list("title" = unbox("video test"),
                        "description" = unbox("description_test"),
                        "tags" = "kevin,kent"),
  status = list("privacyStatus" = unbox("private"),
-              "selfDeclaredMadeForKids" = unbox("false"))) 
+              "selfDeclaredMadeForKids" = unbox("false")))
 
 video_path <- "my_video.mp4"
 

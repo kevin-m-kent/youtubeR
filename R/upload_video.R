@@ -14,15 +14,15 @@
 #' @examples
 #'
 #' google_client <- construct_client()
-#' 
+#'
 #' snippet <- list(snippet = list("title" = unbox("video test"),
 #'                        "description" = unbox("description_test"),
 #'                        "tags" = "kevin,kent"),
 #'  status = list("privacyStatus" = unbox("private"),
-#'               "selfDeclaredMadeForKids" = unbox("false"))) 
-#' 
+#'               "selfDeclaredMadeForKids" = unbox("false")))
+#'
 #' video_path <- "my_video.mp4"
-#' 
+#'
 #' upload_video(google_client, snippet, video_path)
 upload_video <- function(client, snippet, video_path, scope = "https://www.googleapis.com/auth/youtube", token_url = "https://oauth2.googleapis.com/token",
                         auth_url = "https://accounts.google.com/o/oauth2/v2/auth") {
@@ -37,13 +37,13 @@ upload_video <- function(client, snippet, video_path, scope = "https://www.googl
     resp <- httr2::req_oauth_auth_code( req,
                                     client = client,
                                     auth_url = auth_url,
-                                    scope = scope, 
+                                    scope = scope,
                                     pkce = FALSE,
                                     auth_params = list(scope=scope, response_type="code"),
                                     token_params = list(scope=scope, grant_type="authorization_code"),
                                     host_name = "localhost",
                                     host_ip = "127.0.0.1",
-                                    port = 8080, 
+                                    port = 8080,
         ) |>
         httr2::req_body_multipart(
             list(
@@ -54,7 +54,7 @@ upload_video <- function(client, snippet, video_path, scope = "https://www.googl
 
     videoId <- resp |>
         httr2::resp_body_json() |>
-        purrr:::pluck("id")
+        purrr::pluck("id")
 
     videoId
 
