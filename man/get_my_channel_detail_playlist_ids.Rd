@@ -7,7 +7,8 @@
 get_my_channel_detail_playlist_ids(token = fetch_token())
 }
 \arguments{
-\item{token}{A \code{YOUTUBE_TOKEN}.}
+\item{token}{Your YouTube API token. We recommend passing this as a
+\code{YOUTUBE_TOKEN} environment variable.}
 }
 \value{
 The \emph{contentDetails} object encapsulates information about the
