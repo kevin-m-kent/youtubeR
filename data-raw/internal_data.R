@@ -2,13 +2,22 @@
 # reference in functions.
 
 
-base_url <- "https://www.googleapis.com/youtube/v3/"
-
+.base_url <- "https://youtube.googleapis.com/"
+.base_url <- paste0(
+  base_url,
+  c("", "upload/", "resumable/upload/"),
+  "youtube/v3"
+)
+names(.base_url) <- c(
+  "basic",
+  "upload",
+  "resumable_upload"
+)
 
 # Save to internal data -------------------------------------------------------
 
 usethis::use_data(
-  base_url,
+  .base_url,
   internal = TRUE,
   overwrite = TRUE
 )
@@ -17,5 +26,5 @@ usethis::use_data(
 # Clean up ---------------------------------------------------------------------
 
 rm(
-  base_url
+  .base_url
 )

@@ -4,7 +4,14 @@
 \alias{.prepare_request}
 \title{Combine request pieces}
 \usage{
-.prepare_request(endpoint, query, body, method, token)
+.prepare_request(
+  endpoint,
+  query,
+  body,
+  method,
+  token,
+  base_url = c("basic", "upload", "resumable_upload")
+)
 }
 \arguments{
 \item{endpoint}{The path to an endpoint. Optionally, a list with the path
@@ -22,6 +29,9 @@ Case is ignored.}
 
 \item{token}{Your YouTube API token. We recommend passing this as a
 \code{YOUTUBE_TOKEN} environment variable.}
+
+\item{base_url}{Which family of URLs to use. Almost everything will use the
+default basic URL.}
 }
 \value{
 A request ready to perform.

@@ -4,7 +4,14 @@
 \alias{.call_youtube_api}
 \title{Call the YouTube API}
 \usage{
-.call_youtube_api(endpoint, query, body, method, token = fetch_token())
+.call_youtube_api(
+  endpoint,
+  query,
+  body,
+  method,
+  token = fetch_token(),
+  base_url = c("basic", "upload", "resumable_upload")
+)
 }
 \arguments{
 \item{endpoint}{The path to an endpoint. Optionally, a list with the path
@@ -22,6 +29,9 @@ Case is ignored.}
 
 \item{token}{Your YouTube API token. We recommend passing this as a
 \code{YOUTUBE_TOKEN} environment variable.}
+
+\item{base_url}{Which family of URLs to use. Almost everything will use the
+default basic URL.}
 }
 \value{
 The result of the call.

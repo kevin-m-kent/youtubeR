@@ -14,6 +14,8 @@
 #'   Case is ignored.
 #' @param token Your YouTube API token. We recommend passing this as a
 #'   `YOUTUBE_TOKEN` environment variable.
+#' @param base_url Which family of URLs to use. Almost everything will use the
+#'   default basic URL.
 #'
 #' @return The result of the call.
 #' @keywords internal
@@ -21,8 +23,13 @@
                               query,
                               body,
                               method,
-                              token = fetch_token()) {
-  request <- .prepare_request(endpoint, query, body, method, token = token)
+                              token = fetch_token(),
+                              base_url = c(
+                                "basic", "upload", "resumable_upload"
+                              )) {
+  request <- .prepare_request(
+    endpoint, query, body, method, token = token, base_url
+  )
   response <- httr2::req_perform(request)
 
   return(.parse_response(response))
@@ -34,7 +41,16 @@
 #'
 #' @return A request ready to perform.
 #' @keywords internal
-.prepare_request <- function(endpoint, query, body, method, token) {
+.prepare_request <- function(endpoint,
+                             query,
+                             body,
+                             method,
+                             token,
+                             base_url = c(
+                               "basic", "upload", "resumable_upload"
+                             )) {
+  base_url <- rlang::arg_match(base_url)
+  base_url <- .base_url[[base_url]]
   request <- httr2::request(base_url)
   endpoint <- rlang::exec(glue::glue, !!!endpoint)
   request <- httr2::req_url_path_append(request, endpoint)
