@@ -88,7 +88,8 @@ construct_client <- function(client_id = Sys.getenv("YOUTUBE_CLIENT_ID"),
 #' @export
 #' @examples
 #' token <- fetch_token()
-fetch_token <- function(google_client = construct_client(), force = FALSE) {
+fetch_token <- function(google_client = construct_client(),
+                        force = rlang::is_interactive()) {
   token <- Sys.getenv("YOUTUBE_TOKEN")
 
   # Long-term we might want to look into mocking this, but gargle will deal with
@@ -103,8 +104,8 @@ fetch_token <- function(google_client = construct_client(), force = FALSE) {
     )
 
     # gargle will handle this better, but for now we just keep the bearer token
-    # piece. We'll save it in an environment variable in this session, and return
-    # it invisibly.
+    # piece. We'll save it in an environment variable in this session, and
+    # return it invisibly.
     token <- full_token$access_token
     Sys.setenv(YOUTUBE_TOKEN = token)
 

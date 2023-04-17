@@ -16,10 +16,13 @@ Depends:
 Imports: 
     cli,
     curl,
+    fs,
     glue,
     httr2,
+    jsonlite,
     purrr,
-    rlang
+    rlang,
+    snakecase
 Suggests: 
     covr,
     testthat (>= 3.0.0),

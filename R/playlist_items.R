@@ -31,7 +31,7 @@ get_playlist_items <- function(playlist_id,
   if (length(res$items)) {
     return(purrr::map(res$items, purrr::pluck, "contentDetails"))
   } else {
-    return(NULL)
+    return(NULL) # nocov
   }
 }
 

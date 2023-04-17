@@ -4,14 +4,16 @@
 \alias{.prepare_body}
 \title{Prepare the body of a call}
 \usage{
-.prepare_body(body, type = c("json", "multipart"), mime_type)
+.prepare_body(body, mime_type = NULL)
 }
 \arguments{
-\item{body}{An object to use as the body of the request.}
+\item{body}{An object to use as the body of the request. If any component of
+the body is a path, pass it through \code{\link[fs:path]{fs::path()}} or otherwise give it the
+class "fs_path" to indicate that it is a path.}
 
-\item{type}{Whether the request is "json" or "multipart".}
-
-\item{mime_type}{The mime_type of any file included in the body.}
+\item{mime_type}{A character scalar indicating the mime type of any files
+present in the body. Some APIs are ok leaving this at NULL for them to
+guess.}
 }
 \value{
 A prepared body list object with a "json" or "multipart" subclass.

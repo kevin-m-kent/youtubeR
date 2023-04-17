@@ -28,7 +28,8 @@
                                 "basic", "upload", "resumable_upload"
                               )) {
   request <- .prepare_request(
-    endpoint, query, body, method, token = token, base_url
+    endpoint, query, body, method,
+    token = token, base_url
   )
   response <- httr2::req_perform(request)
 
@@ -58,11 +59,13 @@
   if (!missing(query)) {
     query <- .remove_missing(query)
     if (length(query)) {
+      names(query) <- snakecase::to_lower_camel_case(names(query))
       request <- httr2::req_url_query(request, !!!query)
     }
   }
   if (!missing(body)) {
     body <- .remove_missing(body)
+    body <- .prepare_body(body)
     if (length(body)) {
       request <- .add_body(request, body)
     }
@@ -172,33 +175,46 @@
 
 #' Prepare the body of a call
 #'
-#' @param body An object to use as the body of the request.
-#' @param type Whether the request is "json" or "multipart".
-#' @param mime_type The mime_type of any file included in the body.
+#' @param body An object to use as the body of the request. If any component of
+#'   the body is a path, pass it through [fs::path()] or otherwise give it the
+#'   class "fs_path" to indicate that it is a path.
+#' @inheritParams .prepare_body_part
 #'
 #' @return A prepared body list object with a "json" or "multipart" subclass.
 #' @keywords internal
-.prepare_body <- function(body, type = c("json", "multipart"), mime_type) {
-  type <- rlang::arg_match(type)
+.prepare_body <- function(body,
+                          mime_type = NULL) {
+  # TODO: We should probably do some sort of recursive map to make sure all
+  # names at depth are in camelCase.
 
-  switch(type,
-         json = {
-           body <- list(data = body)
-           class(body) <- c("json", "list")
-           return(body)
-         },
-         # There was only one multipart in the API where I originally wrote
-         # this. This might need to be generalized as we implement things.
-         multipart = {
-           if ("file" %in% names(body)) {
-             # TODO: auto-guess type?
-             body$file <- curl::form_file(body$file, type = mime_type)
-           }
-           for (body_part in names(body)[names(body) != "file"]) {
-             body[[body_part]] <- curl::form_data(body[[body_part]])
-           }
-           class(body) <- c("multipart", "list")
-           return(body)
-         }
-  )
+  body <- .compact(body)
+  names(body) <- snakecase::to_lower_camel_case(names(body))
+  if (purrr::some(body, function(x) inherits(x, "fs_path"))) {
+    body <- purrr::map(body, .prepare_body_part, mime_type)
+    class(body) <- c("multipart", "list")
+    return(body)
+  } else {
+    class(body) <- c("json", "list")
+    return(body)
+  }
+}
+
+#' Prepare a multipart body part
+#'
+#' @param body_part One piece of a multipart body.
+#' @param mime_type A character scalar indicating the mime type of any files
+#'   present in the body. Some APIs are ok leaving this at NULL for them to
+#'   guess.
+#'
+#' @return A character or raw vector to post.
+#' @keywords internal
+.prepare_body_part <- function(body_part, mime_type = NULL) {
+  names(body_part) <- snakecase::to_lower_camel_case(names(body_part))
+  if (inherits(body_part, "fs_path")) {
+    return(curl::form_file(body_part, type = mime_type))
+  }
+  return(curl::form_data(
+    jsonlite::toJSON(body_part, auto_unbox = TRUE),
+    type = "application/json"
+  ))
 }

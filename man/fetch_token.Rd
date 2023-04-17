@@ -4,7 +4,10 @@
 \alias{fetch_token}
 \title{Fetch a YouTube API token}
 \usage{
-fetch_token(google_client = construct_client(), force = FALSE)
+fetch_token(
+  google_client = construct_client(),
+  force = rlang::is_interactive()
+)
 }
 \arguments{
 \item{google_client}{A client created with \code{\link[=construct_client]{construct_client()}}.}

@@ -1,19 +1,17 @@
 test_that("upload_video returns expected video ID with a mocked API", {
-
   # Read the mock response
 
 
   # Create a custom response object using the mock data
-  mock_response_object <- function(req)  {
-
+  mock_response_object <- function(req) {
     json_text <- readLines("mock_upload_response.json")
 
-    
+
     httr2::response(
-    status = 200,
-    headers = list("Content-Type" = "application/json"),
-    body = charToRaw(paste(json_text, collapse = ""))
-  )
+      status = 200,
+      headers = list("Content-Type" = "application/json"),
+      body = charToRaw(paste(json_text, collapse = ""))
+    )
   }
 
   client <- list(client_id = "mockClientId", client_secret = "mockClientSecret")
@@ -21,9 +19,7 @@ test_that("upload_video returns expected video ID with a mocked API", {
   video_path <- "test.txt"
   # Use the custom response object to mock the API call
 
-  video_id <- httr2::with_mock(mock_response_object,  upload_video(client, snippet, video_path))
+  video_id <- httr2::with_mock(mock_response_object, upload_video(client, snippet, video_path))
 
   expect_equal(video_id, "mockVideoId")
-}
-
-)
+})
