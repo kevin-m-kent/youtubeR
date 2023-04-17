@@ -23,11 +23,6 @@ datetime <- function() {
 #' @return The list, minus empty elements and branches.
 #' @keywords internal
 .compact <- function(lst, depth = 1, max_depth = 20) {
-  # This does the same thing as purrr::compact except recursively.
-  lst <- purrr::compact(lst)
-  if (!length(lst)) {
-    return(NULL)
-  }
   if (is.list(lst) && depth <= max_depth) {
     lst <- purrr::map(
       lst, .compact,

@@ -188,7 +188,9 @@
   # names at depth are in camelCase.
 
   body <- .compact(body)
-  names(body) <- snakecase::to_lower_camel_case(names(body))
+  if (rlang::is_named(body)) {
+    names(body) <- snakecase::to_lower_camel_case(names(body))
+  }
   if (purrr::some(body, function(x) inherits(x, "fs_path"))) {
     body <- purrr::map(body, .prepare_body_part, mime_type)
     class(body) <- c("multipart", "list")
@@ -209,7 +211,9 @@
 #' @return A character or raw vector to post.
 #' @keywords internal
 .prepare_body_part <- function(body_part, mime_type = NULL) {
-  names(body_part) <- snakecase::to_lower_camel_case(names(body_part))
+  if (rlang::is_named(body_part)) {
+    names(body_part) <- snakecase::to_lower_camel_case(names(body_part))
+  }
   if (inherits(body_part, "fs_path")) {
     return(curl::form_file(body_part, type = mime_type))
   }

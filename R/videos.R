@@ -65,7 +65,6 @@ yt_videos_insert <- function(video_path,
                              status = yt_video_status(),
                              recording_date = datetime(),
                              token = fetch_token()) {
-  # video_path <- "tests/testthat/covrvid.mp4"
   body <- list(
     metadata = list(
       snippet = snippet,

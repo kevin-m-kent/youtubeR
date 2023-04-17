@@ -5,7 +5,7 @@ test_that("datetime produces a proper placeholder", {
 })
 
 test_that(".compact compacts nested lists", {
-  simple <- list(a = 1, b = character())
+  simple <- list(a = 1, b = character(), c = list())
   complex <- list(
     a = list(),
     b = simple,
