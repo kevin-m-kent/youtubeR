@@ -162,7 +162,7 @@
 #' @keywords internal
 .new_youtube_response <- function(response_data) {
   if (is.null(response_data)) {
-    return(NULL)
+    return(NULL) # nocov
   } else {
     return(
       structure(
