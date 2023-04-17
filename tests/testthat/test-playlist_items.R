@@ -4,7 +4,7 @@
 # Tests built against the R4DS Online Learning Community org's YouTube channel.
 # If you're not using the mock, be sure to set up a YOUTUBE_TOKEN for that
 # channel.
-with_mock_dir("api/playlist_items", {
+with_mock_dir("../api/playlist_items", {
   test_that("get_playlist_items works", {
     playlist_id <- get_upload_playlist_id()
     expect_snapshot(get_playlist_items(playlist_id))
