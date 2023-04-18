@@ -1,0 +1,20 @@
+{
+    "kind": "youtube#playlistItemListResponse",
+    "etag": "_aNMhNIkVj3HiVIIv43rXTqREbo",
+    "nextPageToken": "EAAaBlBUOkNBRQ",
+    "items": [
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "Y-Xe_ZBByT_BN_pkUYkGwEpGp2c",
+            "id": "VVVBY3A4ZmNfMkpBdEJwUmRmWVlPcXpBLlM3ZXlMMTZ6UXhj",
+            "contentDetails": {
+                "videoId": "S7eyL16zQxc",
+                "videoPublishedAt": "2023-04-18T15:14:53Z"
+            }
+        }
+    ],
+    "pageInfo": {
+        "totalResults": 2,
+        "resultsPerPage": 1
+    }
+}

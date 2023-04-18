@@ -14,8 +14,9 @@ yt_videos_update(
 )
 }
 \arguments{
-\item{video_id}{(character scalar) The ID that YouTube uses to uniquely
-identify the video.}
+\item{video_id}{(character scalar) The id parameter specifies the YouTube
+video ID for the resource that is being updated In a video resource, the id
+property specifies the video's ID.}
 
 \item{snippet}{Basic details about a video, including title, description,
 uploader, thumbnails and category. See \code{\link[=yt_video_snippet]{yt_video_snippet()}} for details.}

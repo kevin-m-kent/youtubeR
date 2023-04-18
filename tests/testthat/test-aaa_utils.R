@@ -30,3 +30,20 @@ test_that(".str2csv smushes strings", {
     "a,b"
   )
 })
+
+test_that(".format_used_names extracts what we expect", {
+  simple <- list(first_thing = 1, second_thing = character(), third = list())
+  complex <- list(
+    outer_first_thing = list(),
+    outer_second_thing = simple,
+    outer_third = letters
+  )
+  expect_identical(
+    .format_used_names(simple),
+    "firstThing"
+  )
+  expect_identical(
+    .format_used_names(complex),
+    "outerSecondThing,outerThird"
+  )
+})

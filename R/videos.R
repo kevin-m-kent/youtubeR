@@ -30,7 +30,8 @@ get_video_processing_details <- function(video_ids, token = fetch_token()) {
     names(result$items) <- video_ids
     return(purrr::map(result$items, purrr::pluck, "processingDetails"))
   } else {
-    return(NULL)
+    # QUESTION: Is this possible? Probably handle ins the response processing?
+    return(NULL) # nocov
   }
 }
 
@@ -74,7 +75,7 @@ yt_videos_insert <- function(video_path,
   )
   result <- .call_youtube_api(
     endpoint = "videos",
-    query = list(part = .detect_parts(body$metadata)),
+    query = list(part = .format_used_names(body$metadata)),
     body = body,
     base_url = "upload"
   )
@@ -82,25 +83,13 @@ yt_videos_insert <- function(video_path,
   return(result$id)
 }
 
-#' Stringify the names of a list
-#'
-#' @param lst A named list object. This object will be compacted, and then the
-#'   names of any remaining components will be returned, as a comma-separated
-#'   list.
-#'
-#' @return A comma-separated character, such as "this,that".
-#' @keywords internal
-.detect_parts <- function(lst) {
-  names(lst) <- snakecase::to_lower_camel_case(names(lst))
-  return(.str2csv(names(.compact(lst))))
-}
-
 #' Update video
 #'
 #' Updates an existing resource.
 #'
-#' @param video_id (character scalar) The ID that YouTube uses to uniquely
-#'   identify the video.
+#' @param video_id (character scalar) The id parameter specifies the YouTube
+#'   video ID for the resource that is being updated In a video resource, the id
+#'   property specifies the video's ID.
 #' @inheritParams yt_videos_insert
 #'
 #' @return The id of the updated video.
@@ -113,7 +102,6 @@ yt_videos_update <- function(video_id,
                              token = fetch_token()) {
   # HACK: This body should be compared to the existing body for this video.
   # Missing pieces should be filled in from the existing body.
-
   body <- list(
     id = video_id,
     snippet = snippet,
@@ -125,8 +113,40 @@ yt_videos_update <- function(video_id,
   )
   result <- .call_youtube_api(
     endpoint = "videos",
-    query = list(part = .detect_parts(body[names(body) != "id"])),
+    query = list(part = .format_used_names(body[names(body) != "id"])),
     body = body,
     method = "PUT"
   )
+
+  return(result$id)
+}
+
+#' Delete video
+#'
+#' Deletes a resource.
+#'
+#' @param video_id (character scalar) The id parameter specifies the YouTube
+#'   video ID for the resource that is being deleted. In a video resource, the
+#'   id property specifies the video's ID.
+#'
+#' @return The id of the deleted video.
+#' @export
+yt_videos_delete <- function(video_id) {
+  result <- .call_youtube_api(
+    endpoint = "videos",
+    query = list(id = video_id),
+    method = "DELETE"
+  )
+
+  # QUESTION: Does this make sense? That ID isn't valid anymore. Maybe we SHOULD
+  # return NULL?
+  if (is.null(result)) {
+    # This is the expectation so I'm treating this as not an error, and passing
+    # through the video id.
+    return(video_id)
+  }
+
+  # It shouldn't be possible for this to happen without some other error before
+  # this, but be prepared in case it does.
+  cli::cli_abort("Video delete failed.") # nocov
 }

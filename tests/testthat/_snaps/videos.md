@@ -3,44 +3,66 @@
     Code
       get_video_processing_details(video_ids)
     Output
-      $mx7RrARw930
-      $mx7RrARw930$processingStatus
+      $S7eyL16zQxc
+      $S7eyL16zQxc$processingStatus
       [1] "succeeded"
       
-      $mx7RrARw930$fileDetailsAvailability
+      $S7eyL16zQxc$fileDetailsAvailability
       [1] "available"
       
-      $mx7RrARw930$processingIssuesAvailability
+      $S7eyL16zQxc$processingIssuesAvailability
       [1] "available"
       
-      $mx7RrARw930$tagSuggestionsAvailability
+      $S7eyL16zQxc$tagSuggestionsAvailability
       [1] "inProgress"
       
-      $mx7RrARw930$editorSuggestionsAvailability
+      $S7eyL16zQxc$editorSuggestionsAvailability
       [1] "inProgress"
       
-      $mx7RrARw930$thumbnailsAvailability
+      $S7eyL16zQxc$thumbnailsAvailability
       [1] "available"
       
       
-      $RGFQ7IaBv50
-      $RGFQ7IaBv50$processingStatus
+      $Lc7b1X_nDEg
+      $Lc7b1X_nDEg$processingStatus
       [1] "succeeded"
       
-      $RGFQ7IaBv50$fileDetailsAvailability
+      $Lc7b1X_nDEg$fileDetailsAvailability
       [1] "available"
       
-      $RGFQ7IaBv50$processingIssuesAvailability
+      $Lc7b1X_nDEg$processingIssuesAvailability
       [1] "available"
       
-      $RGFQ7IaBv50$tagSuggestionsAvailability
+      $Lc7b1X_nDEg$tagSuggestionsAvailability
       [1] "inProgress"
       
-      $RGFQ7IaBv50$editorSuggestionsAvailability
+      $Lc7b1X_nDEg$editorSuggestionsAvailability
       [1] "inProgress"
       
-      $RGFQ7IaBv50$thumbnailsAvailability
+      $Lc7b1X_nDEg$thumbnailsAvailability
       [1] "available"
+      
+      
+
+# playlists are back to where we started
+
+    Code
+      get_playlist_items(playlist_id)
+    Output
+      [[1]]
+      [[1]]$videoId
+      [1] "S7eyL16zQxc"
+      
+      [[1]]$videoPublishedAt
+      [1] "2023-04-18T15:14:53Z"
+      
+      
+      [[2]]
+      [[2]]$videoId
+      [1] "Lc7b1X_nDEg"
+      
+      [[2]]$videoPublishedAt
+      [1] "2023-04-18T15:11:46Z"
       
       
 

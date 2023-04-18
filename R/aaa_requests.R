@@ -91,9 +91,11 @@
     arg_list,
     rlang::is_missing
   )
+  # QUESTION: I *think* I can simplify this now since we auto-set the body type.
+  # Experiment to see if this ever fails.
   if (all(class(arg_list) == "list")) {
     return(arg_list[arg_present])
-  } else {
+  } else { # nocov start
     return(
       structure(
         arg_list[arg_present],
@@ -101,7 +103,7 @@
         class = class(arg_list)
       )
     )
-  }
+  } # nocov end
 }
 
 #' Add the body to the request
@@ -144,6 +146,11 @@
 #' @keywords internal
 .parse_response <- function(response) {
   httr2::resp_check_status(response)
+
+  if (httr2::resp_status(response) == 204) {
+    # Official "no content" response.
+    return(NULL)
+  }
 
   response <- httr2::resp_body_json(response)
 

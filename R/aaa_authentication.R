@@ -40,7 +40,9 @@ browse_gc_credentials <- function() {
 #' has_youtube_client_envvars()
 #' has_youtube_client_envvars("an_id_string", "a_secret_string")
 has_youtube_client_envvars <- function(client_id = Sys.getenv("YOUTUBE_CLIENT_ID"),
-                                       client_secret = Sys.getenv("YOUTUBE_CLIENT_SECRET")) {
+                                       client_secret = Sys.getenv(
+                                         "YOUTUBE_CLIENT_SECRET"
+                                       )) {
   return(nchar(client_id) && nchar(client_secret))
 }
 
@@ -57,7 +59,9 @@ has_youtube_client_envvars <- function(client_id = Sys.getenv("YOUTUBE_CLIENT_ID
 #' @examples
 #' google_client <- construct_client()
 construct_client <- function(client_id = Sys.getenv("YOUTUBE_CLIENT_ID"),
-                             client_secret = Sys.getenv("YOUTUBE_CLIENT_SECRET")) {
+                             client_secret = Sys.getenv(
+                               "YOUTUBE_CLIENT_SECRET"
+                             )) {
   if (!has_youtube_client_envvars(client_id, client_secret)) {
     cli::cli_abort(
       "Please provide a YOUTUBE_CLIENT_ID and YOUTUBE_CLIENT_SECRET.",

@@ -1,0 +1,49 @@
+{
+    "kind": "youtube#video",
+    "etag": "52T64yW3g9hqJZYGLCoYrNWrBnE",
+    "id": "sEYIlLwun4c",
+    "snippet": {
+        "publishedAt": "2023-04-18T16:05:54Z",
+        "channelId": "UCAcp8fc_2JAtBpRdfYYOqzA",
+        "title": "Test upload 1",
+        "description": "A video to test uploads.",
+        "thumbnails": {
+            "default": {
+                "url": "https://i9.ytimg.com/vi/sEYIlLwun4c/default.jpg?sqp=CKz_-qEG&rs=AOn4CLDkkFpEDiqxqCm0ntpTKa2pOTfrGA",
+                "width": 120,
+                "height": 90
+            },
+            "medium": {
+                "url": "https://i9.ytimg.com/vi/sEYIlLwun4c/mqdefault.jpg?sqp=CKz_-qEG&rs=AOn4CLBc39An4wSRO1Eiq2TOdqSsL1bjDg",
+                "width": 320,
+                "height": 180
+            },
+            "high": {
+                "url": "https://i9.ytimg.com/vi/sEYIlLwun4c/hqdefault.jpg?sqp=CKz_-qEG&rs=AOn4CLCM5r6icObcCRGNHdao5dI8yp6r3Q",
+                "width": 480,
+                "height": 360
+            }
+        },
+        "channelTitle": "youtubeR Package Tests",
+        "tags": [
+            "tag1",
+            "tag2"
+        ],
+        "categoryId": "22",
+        "liveBroadcastContent": "none",
+        "localized": {
+            "title": "Test upload 1",
+            "description": "A video to test uploads."
+        }
+    },
+    "status": {
+        "uploadStatus": "uploaded",
+        "privacyStatus": "private",
+        "license": "youtube",
+        "embeddable": true,
+        "publicStatsViewable": true
+    },
+    "recordingDetails": {
+        "recordingDate": "2023-04-18T15:10:00Z"
+    }
+}

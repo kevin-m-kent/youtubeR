@@ -42,3 +42,16 @@ datetime <- function() {
 .str2csv <- function(string) {
   return(paste(string, collapse = ","))
 }
+
+#' Stringify the names of a list
+#'
+#' @param lst A named list object. This object will be compacted, and then the
+#'   names of any remaining components will be returned, as a comma-separated
+#'   list.
+#'
+#' @return A comma-separated character, such as "this,that".
+#' @keywords internal
+.format_used_names <- function(lst) {
+  names(lst) <- snakecase::to_lower_camel_case(names(lst))
+  return(.str2csv(names(.compact(lst))))
+}
