@@ -1,3 +1,5 @@
+# TODO: Update to use youtubeR test channel.
+
 # Tests built against the R4DS Online Learning Community org's YouTube channel.
 # If you're not using the mock, be sure to set up a YOUTUBE_TOKEN for that
 # channel.

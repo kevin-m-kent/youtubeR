@@ -23,10 +23,6 @@ get_video_processing_details <- function(video_ids, token = fetch_token()) {
     token = token
   )
 
-  # COMBAK: Clean this up. I like to convert names to snake_case, and we should
-  # at least consider rectangling this data (although that might come in a
-  # downstream package).
-
   if (length(result$items)) {
     # HACK: Technically these could come back in a different order, or be
     # missing some. We should dig into res$items[[x]]$id to match up to
@@ -83,8 +79,6 @@ yt_videos_insert <- function(video_path,
     base_url = "upload"
   )
 
-  # COMBAK: Is it possible to get here with any empty result? If so, throw an
-  # error more formally here.
   return(result$id)
 }
 

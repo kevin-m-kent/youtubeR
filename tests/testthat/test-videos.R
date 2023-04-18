@@ -1,3 +1,5 @@
+# TODO: Update to use youtubeR test channel.
+
 # HACK: These tests are even more fragile. They will change every time there's a
 # new upload or an upload changes status. We should set up an account for
 # testing, and even then this will be tricky.

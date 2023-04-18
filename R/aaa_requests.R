@@ -143,12 +143,15 @@
 #' @return A `youtube_response` `list` object.
 #' @keywords internal
 .parse_response <- function(response) {
-  # COMBAK: Consider using the api-spec-supplied error explanations.
   httr2::resp_check_status(response)
 
   response <- httr2::resp_body_json(response)
 
   # COMBAK: Add robust error checking to make sure that parsed properly.
+
+  # COMBAK: Clean this up. I like to convert names to snake_case, and we should
+  # at least consider rectangling this data (although that might come in a
+  # downstream package).
 
   return(.new_youtube_response(response))
 }
