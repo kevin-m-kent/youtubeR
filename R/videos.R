@@ -23,12 +23,12 @@ get_video_processing_details <- function(video_ids, token = fetch_token()) {
     token = token
   )
 
-  # TODO: Clean this up. I like to convert names to snake_case, and we should at
-  # least consider rectangling this data (although that might come in a
+  # COMBAK: Clean this up. I like to convert names to snake_case, and we should
+  # at least consider rectangling this data (although that might come in a
   # downstream package).
 
   if (length(result$items)) {
-    # TODO: Technically these could come back in a different order, or be
+    # HACK: Technically these could come back in a different order, or be
     # missing some. We should dig into res$items[[x]]$id to match up to
     # video_ids.
     names(result$items) <- video_ids
@@ -83,7 +83,7 @@ yt_videos_insert <- function(video_path,
     base_url = "upload"
   )
 
-  # TODO: Is it possible to get here with any empty result? If so, throw an
+  # COMBAK: Is it possible to get here with any empty result? If so, throw an
   # error more formally here.
   return(result$id)
 }
@@ -117,7 +117,7 @@ yt_videos_update <- function(video_id,
                              status = yt_video_status(),
                              recording_date = datetime(),
                              token = fetch_token()) {
-  # TODO: This body should be compared to the existing body for this video.
+  # HACK: This body should be compared to the existing body for this video.
   # Missing pieces should be filled in from the existing body.
 
   body <- list(

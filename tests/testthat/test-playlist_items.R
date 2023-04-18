@@ -1,4 +1,4 @@
-# TODO: These tests are super fragile. They will change every time there's a new
+# HACK: These tests are super fragile. They will change every time there's a new
 # upload. We should set up an account for testing.
 
 # Tests built against the R4DS Online Learning Community org's YouTube channel.

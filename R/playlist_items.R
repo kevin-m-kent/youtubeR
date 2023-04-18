@@ -24,8 +24,8 @@ get_playlist_items <- function(playlist_id,
     token = token
   )
 
-  # TODO: Clean this up. I like to convert names to snake_case, and we should at
-  # least consider rectangling this data (although that might come in a
+  # COMBAK: Clean this up. I like to convert names to snake_case, and we should
+  # at least consider rectangling this data (although that might come in a
   # downstream package).
 
   if (length(res$items)) {

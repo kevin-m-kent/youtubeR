@@ -143,12 +143,12 @@
 #' @return A `youtube_response` `list` object.
 #' @keywords internal
 .parse_response <- function(response) {
-  # TODO: Consider using the api-spec-supplied error explanations.
+  # COMBAK: Consider using the api-spec-supplied error explanations.
   httr2::resp_check_status(response)
 
   response <- httr2::resp_body_json(response)
 
-  # TODO: Add robust error checking to make sure that parsed properly.
+  # COMBAK: Add robust error checking to make sure that parsed properly.
 
   return(.new_youtube_response(response))
 }
@@ -184,7 +184,7 @@
 #' @keywords internal
 .prepare_body <- function(body,
                           mime_type = NULL) {
-  # TODO: We should probably do some sort of recursive map to make sure all
+  # COMBAK: We should probably do some sort of recursive map to make sure all
   # names at depth are in camelCase.
 
   body <- .compact(body)
