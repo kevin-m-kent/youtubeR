@@ -4,12 +4,15 @@
 \alias{yt_videos_delete}
 \title{Delete video}
 \usage{
-yt_videos_delete(video_id)
+yt_videos_delete(video_id, token = fetch_token())
 }
 \arguments{
 \item{video_id}{(character scalar) The id parameter specifies the YouTube
 video ID for the resource that is being deleted. In a video resource, the
 id property specifies the video's ID.}
+
+\item{token}{Your YouTube API token. We recommend passing this as a
+\code{YOUTUBE_TOKEN} environment variable.}
 }
 \value{
 The id of the deleted video.

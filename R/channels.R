@@ -52,5 +52,5 @@ get_my_channel_detail_playlist_ids <- function(token = fetch_token()) {
 #' @examplesIf has_youtube_client_envvars() && interactive()
 #' get_upload_playlist_id()
 get_upload_playlist_id <- function(token = fetch_token()) {
-  return(get_my_channel_detail_playlist_ids()$uploads)
+  return(get_my_channel_detail_playlist_ids(token = token)$uploads)
 }

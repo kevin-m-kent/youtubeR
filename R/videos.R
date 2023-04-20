@@ -77,6 +77,7 @@ yt_videos_insert <- function(video_path,
     endpoint = "videos",
     query = list(part = .format_used_names(body$metadata)),
     body = body,
+    token = token,
     base_url = "upload"
   )
 
@@ -115,7 +116,8 @@ yt_videos_update <- function(video_id,
     endpoint = "videos",
     query = list(part = .format_used_names(body[names(body) != "id"])),
     body = body,
-    method = "PUT"
+    method = "PUT",
+    token = token
   )
 
   return(result$id)
@@ -128,14 +130,16 @@ yt_videos_update <- function(video_id,
 #' @param video_id (character scalar) The id parameter specifies the YouTube
 #'   video ID for the resource that is being deleted. In a video resource, the
 #'   id property specifies the video's ID.
+#' @inheritParams .call_youtube_api
 #'
 #' @return The id of the deleted video.
 #' @export
-yt_videos_delete <- function(video_id) {
+yt_videos_delete <- function(video_id, token = fetch_token()) {
   result <- .call_youtube_api(
     endpoint = "videos",
     query = list(id = video_id),
-    method = "DELETE"
+    method = "DELETE",
+    token = token
   )
 
   # QUESTION: Does this make sense? That ID isn't valid anymore. Maybe we SHOULD
