@@ -139,7 +139,7 @@ yt_authenticate <- function(client = yt_construct_client(),
   key <- rlang::hash(client)
   if (!is.null(the[[key]])) {
     if (!.is_expired(the[[key]]$expires_at)) {
-      return(the[[key]]$access_token)
+      return(the[[key]])
     }
   }
 
@@ -202,9 +202,9 @@ yt_authenticate <- function(client = yt_construct_client(),
   # into that cache without digging into unexported httr2 functions (and thus
   # implementation might change).
   if (!cache_disk) {
-    access_token <- .get_token_noninteractive(client)
-    if (!is.null(access_token)) {
-      return(httr2::req_auth_bearer_token(request, access_token))
+    token <- .get_token_noninteractive(client)
+    if (!is.null(token)) {
+      return(httr2::req_auth_bearer_token(request, token$access_token))
     }
   }
 
