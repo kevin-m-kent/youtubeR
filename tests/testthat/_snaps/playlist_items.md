@@ -1,7 +1,7 @@
 # get_playlist_items works
 
     Code
-      get_playlist_items(playlist_id)
+      get_playlist_items(playlist_id, client = NULL, token = yt_token)
     Output
       [[1]]
       [[1]]$videoId
@@ -23,7 +23,7 @@
 ---
 
     Code
-      get_playlist_items(playlist_id, max_results = 1)
+      get_playlist_items(playlist_id, max_results = 1, client = NULL, token = yt_token)
     Output
       [[1]]
       [[1]]$videoId
@@ -37,14 +37,14 @@
 # get_playlist_video_ids works
 
     Code
-      get_playlist_video_ids(playlist_id)
+      get_playlist_video_ids(playlist_id, client = NULL, token = yt_token)
     Output
       [1] "S7eyL16zQxc" "Lc7b1X_nDEg"
 
 ---
 
     Code
-      get_playlist_video_ids(playlist_id, max_results = 1)
+      get_playlist_video_ids(playlist_id, max_results = 1, client = NULL, token = yt_token)
     Output
       [1] "S7eyL16zQxc"
 

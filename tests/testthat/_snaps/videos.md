@@ -1,7 +1,7 @@
 # get_video_processing_details works
 
     Code
-      get_video_processing_details(video_ids)
+      get_video_processing_details(video_ids, client = NULL, token = yt_token)
     Output
       $S7eyL16zQxc
       $S7eyL16zQxc$processingStatus
@@ -47,7 +47,7 @@
 # playlists are back to where we started
 
     Code
-      get_playlist_items(playlist_id)
+      get_playlist_items(playlist_id, client = NULL, token = yt_token)
     Output
       [[1]]
       [[1]]$videoId

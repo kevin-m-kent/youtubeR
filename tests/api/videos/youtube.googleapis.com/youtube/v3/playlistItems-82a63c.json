@@ -1,6 +1,6 @@
 {
     "kind": "youtube#playlistItemListResponse",
-    "etag": "bU17kDwkTxNcTAOLEoJQsST773w",
+    "etag": "Ypjr-Ac1V1vSyJYXbyy-BPwNzWA",
     "items": [
         {
             "kind": "youtube#playlistItem",
@@ -23,6 +23,6 @@
     ],
     "pageInfo": {
         "totalResults": 2,
-        "resultsPerPage": 50
+        "resultsPerPage": 2
     }
 }
