@@ -1,35 +1,45 @@
 #' Call the YouTube API
 #'
-#' This is unexported because I intend to use it from endpoint-specific
-#' functions. Only export the resulting functions.
+#' If you use this function, please [open an issue in the youtubeR GitHub
+#' repository](https://github.com/kevin-m-kent/youtubeR/issues) describing your
+#' use case. We intend to wrap all endpoints such that this function will not be
+#' necessary for users.
 #'
+#' @inheritParams .yt_req_auth
 #' @param endpoint The path to an endpoint. Optionally, a list with the path
 #'   plus variables to [glue::glue()] into the path.
 #' @param query An optional list of parameters to pass in the query portion of
 #'   the request.
 #' @param body An optional list of parameters to pass in the body portion of the
-#'   request. Should have additional class "json" or "multipart". See the
-#'   associated http2 functions for details.
+#'   request.
 #' @param method If the method is something other than GET or POST, supply it.
 #'   Case is ignored.
-#' @param token Your YouTube API token. We recommend passing this as a
-#'   `YOUTUBE_TOKEN` environment variable.
 #' @param base_url Which family of URLs to use. Almost everything will use the
 #'   default basic URL.
 #'
 #' @return The result of the call.
-#' @keywords internal
-.call_youtube_api <- function(endpoint,
-                              query,
-                              body,
-                              method,
-                              token = fetch_token(),
-                              base_url = c(
-                                "basic", "upload", "resumable_upload"
-                              )) {
+#' @export
+yt_call_api <- function(endpoint,
+                        query = NULL,
+                        body = NULL,
+                        method = NULL,
+                        client = yt_construct_client(),
+                        cache_disk = getOption("yt_cache_disk", FALSE),
+                        cache_key = getOption("yt_cache_key", NULL),
+                        token = NULL,
+                        base_url = c(
+                          "basic", "upload", "resumable_upload"
+                        )) {
   request <- .prepare_request(
-    endpoint, query, body, method,
-    token = token, base_url
+    endpoint = endpoint,
+    query = query,
+    body = body,
+    method = method,
+    client = client,
+    cache_disk = cache_disk,
+    cache_key = cache_key,
+    token = token,
+    base_url = base_url
   )
   response <- httr2::req_perform(request)
 
@@ -38,15 +48,18 @@
 
 #' Combine request pieces
 #'
-#' @inheritParams .call_youtube_api
+#' @inheritParams yt_call_api
 #'
 #' @return A request ready to perform.
 #' @keywords internal
 .prepare_request <- function(endpoint,
-                             query,
-                             body,
-                             method,
-                             token,
+                             query = NULL,
+                             body = NULL,
+                             method = NULL,
+                             client = yt_construct_client(),
+                             cache_disk = getOption("yt_cache_disk", FALSE),
+                             cache_key = getOption("yt_cache_key", NULL),
+                             token = NULL,
                              base_url = c(
                                "basic", "upload", "resumable_upload"
                              )) {
@@ -56,26 +69,32 @@
   endpoint <- rlang::exec(glue::glue, !!!endpoint)
   request <- httr2::req_url_path_append(request, endpoint)
 
-  if (!missing(query)) {
+  if (!is.null(query)) {
     query <- .remove_missing(query)
     if (length(query)) {
       names(query) <- snakecase::to_lower_camel_case(names(query))
       request <- httr2::req_url_query(request, !!!query)
     }
   }
-  if (!missing(body)) {
+  if (!is.null(body)) {
     body <- .remove_missing(body)
     body <- .prepare_body(body)
     if (length(body)) {
       request <- .add_body(request, body)
     }
   }
-  if (!missing(method)) {
+  if (!is.null(method)) {
     request <- httr2::req_method(request, method)
   }
 
   return(
-    httr2::req_auth_bearer_token(request, token)
+    .yt_req_auth(
+      request = request,
+      client = client,
+      cache_disk = cache_disk,
+      cache_key = cache_key,
+      token = token
+    )
   )
 }
 
@@ -96,6 +115,7 @@
   if (all(class(arg_list) == "list")) {
     return(arg_list[arg_present])
   } else { # nocov start
+    stop("In the .remove_missing piece you thought you could remove.")
     return(
       structure(
         arg_list[arg_present],
@@ -108,7 +128,7 @@
 
 #' Add the body to the request
 #'
-#' @inheritParams .call_youtube_api
+#' @inheritParams yt_call_api
 #' @param request The rest of the request.
 #'
 #' @return The request with the body appropriately added.
@@ -136,51 +156,6 @@
       data = unclass(body)
     )
   )
-}
-
-#' Parse the returned response
-#'
-#' @param response A raw response returned from the YouTube api.
-#'
-#' @return A `youtube_response` `list` object.
-#' @keywords internal
-.parse_response <- function(response) {
-  httr2::resp_check_status(response)
-
-  if (httr2::resp_status(response) == 204) {
-    # Official "no content" response.
-    return(NULL)
-  }
-
-  response <- httr2::resp_body_json(response)
-
-  # COMBAK: Add robust error checking to make sure that parsed properly.
-
-  # COMBAK: Clean this up. I like to convert names to snake_case, and we should
-  # at least consider rectangling this data (although that might come in a
-  # downstream package).
-
-  return(.new_youtube_response(response))
-}
-
-#' Construct a youtube_response
-#'
-#' @param response_data The `data` portion of a response from
-#'   `httr2::resp_body_json()`.
-#'
-#' @return An object with additional class "youtube_response", or `NULL`.
-#' @keywords internal
-.new_youtube_response <- function(response_data) {
-  if (is.null(response_data)) {
-    return(NULL) # nocov
-  } else {
-    return(
-      structure(
-        response_data,
-        class = c("youtube_response", class(response_data))
-      )
-    )
-  }
 }
 
 #' Prepare the body of a call

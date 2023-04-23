@@ -18,13 +18,13 @@
 #' @export
 #'
 #' @examples
-#' yt_video_snippet()
-#' yt_video_snippet(title = "An example video", tags = c("a", "b"))
-yt_video_snippet <- function(title = character(),
-                             description = character(),
-                             tags = character(),
-                             category_id = character(),
-                             default_language = character()) {
+#' yt_schema_video_snippet()
+#' yt_schema_video_snippet(title = "An example video", tags = c("a", "b"))
+yt_schema_video_snippet <- function(title = character(),
+                                    description = character(),
+                                    tags = character(),
+                                    category_id = character(),
+                                    default_language = character()) {
   return(
     .compact(
       list(
@@ -40,7 +40,8 @@ yt_video_snippet <- function(title = character(),
 
 #' Video status
 #'
-#' Basic details about a video category, such as its localized title.
+#' The status object contains information about the video's uploading,
+#' processing, and privacy statuses.
 #'
 #' @param embeddable (logical) This value indicates if the video can be embedded
 #'   on another website.
@@ -61,14 +62,14 @@ yt_video_snippet <- function(title = character(),
 #' @export
 #'
 #' @examples
-#' yt_video_status()
-#' yt_video_status(embeddable = TRUE)
-yt_video_status <- function(embeddable = logical(),
-                            license = character(),
-                            privacy_status = character(),
-                            public_stats_viewable = logical(),
-                            publish_at = datetime(),
-                            self_declared_made_for_kids = logical()) {
+#' yt_schema_video_status()
+#' yt_schema_video_status(embeddable = TRUE)
+yt_schema_video_status <- function(embeddable = logical(),
+                                   license = character(),
+                                   privacy_status = character(),
+                                   public_stats_viewable = logical(),
+                                   publish_at = datetime(),
+                                   self_declared_made_for_kids = logical()) {
   return(
     .compact(
       list(
@@ -95,10 +96,10 @@ yt_video_status <- function(embeddable = logical(),
 #' @export
 #'
 #' @examples
-#' yt_video_localization()
-#' yt_video_localization(description = "A description.")
-yt_video_localization <- function(description = character(),
-                                  title = character()) {
+#' yt_schema_video_localization()
+#' yt_schema_video_localization(description = "A description.")
+yt_schema_video_localization <- function(description = character(),
+                                         title = character()) {
   return(
     .compact(
       list(

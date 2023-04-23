@@ -1,25 +1,25 @@
 {
     "kind": "youtube#video",
-    "etag": "52T64yW3g9hqJZYGLCoYrNWrBnE",
-    "id": "sEYIlLwun4c",
+    "etag": "ov2tGgcHeADd2VtMjGLKSGg8mmw",
+    "id": "FaBQeWy6k3M",
     "snippet": {
-        "publishedAt": "2023-04-18T16:05:54Z",
+        "publishedAt": "2023-04-23T15:51:19Z",
         "channelId": "UCAcp8fc_2JAtBpRdfYYOqzA",
         "title": "Test upload 1",
         "description": "A video to test uploads.",
         "thumbnails": {
             "default": {
-                "url": "https://i9.ytimg.com/vi/sEYIlLwun4c/default.jpg?sqp=CKz_-qEG&rs=AOn4CLDkkFpEDiqxqCm0ntpTKa2pOTfrGA",
+                "url": "https://i9.ytimg.com/vi/FaBQeWy6k3M/default.jpg?sqp=CKinlaIG&rs=AOn4CLAXDkS6dRJELggRerdro5MuaLRxRw",
                 "width": 120,
                 "height": 90
             },
             "medium": {
-                "url": "https://i9.ytimg.com/vi/sEYIlLwun4c/mqdefault.jpg?sqp=CKz_-qEG&rs=AOn4CLBc39An4wSRO1Eiq2TOdqSsL1bjDg",
+                "url": "https://i9.ytimg.com/vi/FaBQeWy6k3M/mqdefault.jpg?sqp=CKinlaIG&rs=AOn4CLC4Uqf0VhQHPxrHbqIWssrVokbqUw",
                 "width": 320,
                 "height": 180
             },
             "high": {
-                "url": "https://i9.ytimg.com/vi/sEYIlLwun4c/hqdefault.jpg?sqp=CKz_-qEG&rs=AOn4CLCM5r6icObcCRGNHdao5dI8yp6r3Q",
+                "url": "https://i9.ytimg.com/vi/FaBQeWy6k3M/hqdefault.jpg?sqp=CKinlaIG&rs=AOn4CLC3S7pt2EUyExix0DG11iDulqZR5Q",
                 "width": 480,
                 "height": 360
             }

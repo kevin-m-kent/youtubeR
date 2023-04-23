@@ -1,10 +1,10 @@
-# construct_client constructs a client
+# yt_construct_client constructs a client
 
     Code
-      construct_client("a", "b")
+      yt_construct_client("a", "b")
     Message <cliMessage>
       <httr2_oauth_client>
-      name: video_info_api
+      name: youtube_data_api
       id: a
       secret: <REDACTED>
       token_url: https://oauth2.googleapis.com/token
@@ -13,10 +13,10 @@
 ---
 
     Code
-      construct_client()
+      yt_construct_client()
     Message <cliMessage>
       <httr2_oauth_client>
-      name: video_info_api
+      name: youtube_data_api
       id: an_id
       secret: <REDACTED>
       token_url: https://oauth2.googleapis.com/token

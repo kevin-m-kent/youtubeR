@@ -18,6 +18,7 @@ variables. We recommend placing these environment variables in your
 }
 \examples{
 gc_credentials_url <- browse_gc_credentials()
+# Copy/paste values from your client.
 Sys.setenv(YOUTUBE_CLIENT_ID = "12345-ab12c.apps.googleusercontent.com")
 Sys.setenv(YOUTUBE_CLIENT_SECRET = "ABCD-eFg_H")
 }

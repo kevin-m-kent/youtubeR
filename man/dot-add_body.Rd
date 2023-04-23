@@ -10,8 +10,7 @@
 \item{request}{The rest of the request.}
 
 \item{body}{An optional list of parameters to pass in the body portion of the
-request. Should have additional class "json" or "multipart". See the
-associated http2 functions for details.}
+request.}
 }
 \value{
 The request with the body appropriately added.

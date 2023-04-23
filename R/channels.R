@@ -2,7 +2,7 @@
 #'
 #' Get ids of playlists that contain details about the content of a channel.
 #'
-#' @inheritParams .call_youtube_api
+#' @inheritParams yt_call_api
 #'
 #' @return The *contentDetails* object encapsulates information about the
 #'   channel's content.
@@ -15,15 +15,25 @@
 #' | uploads | character | The ID of the playlist that contains the channel's uploaded videos. Use the videos.insert method to upload new videos and the videos.delete method to delete previously uploaded videos. |
 #' @export
 #'
-#' @examplesIf has_youtube_client_envvars() && interactive()
+#' @examplesIf yt_has_client_envvars() && interactive()
 #' get_my_channel_details()
-get_my_channel_detail_playlist_ids <- function(token = fetch_token()) {
-  res <- .call_youtube_api(
+get_my_channel_detail_playlist_ids <- function(client = yt_construct_client(),
+                                               cache_disk = getOption(
+                                                 "yt_cache_disk", FALSE
+                                               ),
+                                               cache_key = getOption(
+                                                 "yt_cache_key", NULL
+                                               ),
+                                               token = NULL) {
+  res <- yt_call_api(
     endpoint = "channels",
     query = list(
       part = "contentDetails",
       mine = TRUE
     ),
+    client = client,
+    cache_disk = cache_disk,
+    cache_key = cache_key,
     token = token
   )
 
@@ -44,13 +54,27 @@ get_my_channel_detail_playlist_ids <- function(token = fetch_token()) {
 #'
 #' Retrieves the upload playlist ids.
 #'
-#' @inheritParams .call_youtube_api
+#' @inheritParams yt_call_api
 #'
 #' @return list of playlist ids for uploads
 #' @export
 #'
-#' @examplesIf has_youtube_client_envvars() && interactive()
+#' @examplesIf yt_has_client_envvars() && interactive()
 #' get_upload_playlist_id()
-get_upload_playlist_id <- function(token = fetch_token()) {
-  return(get_my_channel_detail_playlist_ids(token = token)$uploads)
+get_upload_playlist_id <- function(client = yt_construct_client(),
+                                   cache_disk = getOption(
+                                     "yt_cache_disk", FALSE
+                                   ),
+                                   cache_key = getOption(
+                                     "yt_cache_key", NULL
+                                   ),
+                                   token = NULL) {
+  return(
+    get_my_channel_detail_playlist_ids(
+      client = client,
+      cache_disk = cache_disk,
+      cache_key = cache_key,
+      token = token
+    )$uploads
+  )
 }

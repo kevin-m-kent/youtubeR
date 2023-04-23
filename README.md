@@ -18,9 +18,7 @@ A package for interacting with the Youtube Data API. This package is
 being developed first to aid in the processing of [R4DS Online Learning
 Community](https://r4ds.io) book club videos. As such, functionality
 will be focused where it is needed for that task. Long-term, we hope to
-implement the entire YouTube API. In addition, the expected workflow is
-currently either interactive, or using a very recently updated token. We
-hope to implement a non-interactive workflow, if possible.
+implement the entire YouTube API.
 
 ## Installation
 
@@ -61,7 +59,7 @@ You should now be set up to call functions in the package. The first
 time you call a function interactively, you will be asked to authorize
 your client to act on your behalf (in your web browser).
 
-## Retrieving Video Status (oauth2 manual workflow)
+## Retrieving Video Status
 
 The goal here is to get the video status (if it is finished processing)
 for each video that has been uploaded.
@@ -78,7 +76,7 @@ video_ids <- get_playlist_video_ids(my_playlist_id)
 video_details <- get_video_processing_details(video_ids)
 ```
 
-## Uploading Videos (oauth2 manual workflow)
+## Uploading Videos
 
 Following a similar workflow, we can also upload videos to youtube.
 Assuming you already have created the client as above, you will need a
@@ -87,12 +85,12 @@ and other metadata for the video. The video path is the path to the
 video file on your local machine.
 
 ``` r
-snippet <- yt_video_snippet(
+snippet <- yt_schema_video_snippet(
   title = "video test",
   description = "description of this test video",
   tags = c("example tag", "another tag")
 )
-status <- yt_video_status(
+status <- yt_schema_video_status(
   privacy_status = "private",
   self_declared_made_for_kids = FALSE
 )

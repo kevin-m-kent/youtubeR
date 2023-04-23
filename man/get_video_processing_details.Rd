@@ -4,13 +4,30 @@
 \alias{get_video_processing_details}
 \title{Get video processing details}
 \usage{
-get_video_processing_details(video_ids, token = fetch_token())
+get_video_processing_details(
+  video_ids,
+  client = yt_construct_client(),
+  cache_disk = getOption("yt_cache_disk", FALSE),
+  cache_key = getOption("yt_cache_key", NULL),
+  token = NULL
+)
 }
 \arguments{
 \item{video_ids}{A character vector of video ids.}
 
-\item{token}{Your YouTube API token. We recommend passing this as a
-\code{YOUTUBE_TOKEN} environment variable.}
+\item{client}{A YouTube OAuth client created with \code{\link[=yt_construct_client]{yt_construct_client()}}.}
+
+\item{cache_disk}{Should the access token be cached on disk? This reduces
+the number of times that you need to re-authenticate at the cost of
+storing access credentials on disk. Cached tokens are encrypted and
+automatically deleted 30 days after creation.}
+
+\item{cache_key}{If you are authenticating with multiple users using the same
+client, use this key to differentiate between those users.}
+
+\item{token}{A YouTube API OAuth token, or the \code{access_token} string from
+such a token. We recommend that you instead supply a \code{client}, in which
+case an appropriate token will be located if possible.}
 }
 \value{
 A list of processing status details. processingStatus is probably of
@@ -20,7 +37,7 @@ most interest
 Retrieves the processing details for a vector of video IDs
 }
 \examples{
-\dontshow{if (has_youtube_client_envvars() && interactive()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (yt_has_client_envvars() && interactive()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 get_upload_playlist_id() |>
   get_playlist_items() |>
   get_video_processing_details()
