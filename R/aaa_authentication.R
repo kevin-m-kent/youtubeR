@@ -114,7 +114,6 @@ yt_authenticate <- function(client = yt_construct_client(),
     token <- .get_token_noninteractive(client, refresh_token)
   }
 
-  # Long-term we might need to mock this for testing.
   if (rlang::is_interactive() && is.null(token)) { # nocov start
     token <- httr2::oauth_flow_auth_code(
       client = client,
