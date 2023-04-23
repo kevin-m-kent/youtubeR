@@ -203,7 +203,7 @@ yt_authenticate <- function(client = yt_construct_client(),
   # implementation might change).
   if (!cache_disk) {
     token <- .get_token_noninteractive(client)
-    if (!is.null(token) && !.is_expired(token[["expires_at"]])) {
+    if (!is.null(token)) {
       return(httr2::req_auth_bearer_token(request, token$access_token))
     }
   }
