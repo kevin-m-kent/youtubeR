@@ -3,5 +3,6 @@
 .RData
 .Ruserdata
 .Rbuildignore
+.Renviron
 
 docs

@@ -1,0 +1,39 @@
+{
+    "kind": "youtube#video",
+    "etag": "ljEVzlouXxPaI-mZtLTdJpfBKuE",
+    "id": "OFIb3pr-JDE",
+    "snippet": {
+        "publishedAt": "2023-04-23T17:07:25Z",
+        "channelId": "UCAcp8fc_2JAtBpRdfYYOqzA",
+        "title": "Test upload 1",
+        "description": "A video to test updates.",
+        "thumbnails": {
+            "default": {
+                "url": "https://i9.ytimg.com/vi/OFIb3pr-JDE/default.jpg?sqp=CLzKlaIG&rs=AOn4CLAVickgUhLcb_ckhtAgGAH9jPZxiw",
+                "width": 120,
+                "height": 90
+            },
+            "medium": {
+                "url": "https://i9.ytimg.com/vi/OFIb3pr-JDE/mqdefault.jpg?sqp=CLzKlaIG&rs=AOn4CLBM81MP3EIVmyDln9NaIscYkXc64Q",
+                "width": 320,
+                "height": 180
+            },
+            "high": {
+                "url": "https://i9.ytimg.com/vi/OFIb3pr-JDE/hqdefault.jpg?sqp=CLzKlaIG&rs=AOn4CLCeNMoIqHFF7G4qHGLtpN7FfjlI1w",
+                "width": 480,
+                "height": 360
+            }
+        },
+        "channelTitle": "youtubeR Package Tests",
+        "tags": [
+            "tag1"
+        ],
+        "categoryId": "22",
+        "liveBroadcastContent": "none",
+        "localized": {
+            "title": "Test upload 1",
+            "description": "A video to test updates."
+        },
+        "defaultAudioLanguage": "en-US"
+    }
+}
