@@ -1,7 +1,6 @@
 #' Get videos for given playlistId
 #'
-#'
-#' @param mine boolean
+#' @param playlistId Youtube assigned id for given playlist.
 #' @param max_results The maximum number of results to return.
 #' @inheritParams yt_call_api
 #'
@@ -48,7 +47,7 @@ get_videos_for_playlistId <- function(playlistId = NULL,
 
 
 #'  Return tibble for videos for given playlist
-#'
+#' @param playlistId Youtube assigned id for given playlist.
 #' @export
 make_tibble <- function(playlistId = playlistId) {
   res <- get_videos_for_playlistId(playlistId = playlistId)
