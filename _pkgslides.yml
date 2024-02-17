@@ -1,0 +1,14 @@
+functions: auto
+datasets: all
+format:
+  theme: default
+  functions:
+    description: yes
+    return: yes
+    parameters: yes
+    examples: yes
+    code: yes
+  datasets:
+    format: yes
+    source: yes
+    references: yes
