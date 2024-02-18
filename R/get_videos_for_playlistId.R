@@ -49,7 +49,7 @@ get_videos_for_playlistId <- function(playlistId = NULL,
 #'  Return tibble for videos for given playlist
 #' @param playlistId Youtube assigned id for given playlist.
 #' @export
-make_tibble <- function(playlistId = playlistId) {
+make_video_tibble <- function(playlistId = playlistId) {
   res <- get_videos_for_playlistId(playlistId = playlistId)
   return(as.data.frame(do.call(rbind, res)))
 }
