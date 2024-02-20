@@ -23,7 +23,7 @@ get_my_playlists <- function(max_results = 100,
     endpoint = "playlists",
     query = list(
       part = "snippet, contentDetails",
-      fields = "items(snippet(title, description))",
+      fields = "items(id, snippet(title, description))",
       maxResults = max_results,
       # (TODO channelId = channelId),
       mine = TRUE
@@ -33,7 +33,6 @@ get_my_playlists <- function(max_results = 100,
     cache_key = cache_key,
     token = token
   )
-
   if (length(res$items)) {
     #   return(purrr::map(res$items, purrr::pluck, "contentDetails"))
     return(purrr::map(res$items, purrr::pluck, "snippet"))
@@ -98,8 +97,8 @@ get_playlists <- function(channelId,
   res <- yt_call_api(
     endpoint = "playlists",
     query = list(
-      part = "snippet, contentDetails",
-      fields = "items(snippet(title, description))",
+      part = "id, snippet, contentDetails",
+      fields = "items(id, snippet(title, description))",
       maxResults = max_results,
       channelId = channelId
     ),
@@ -108,10 +107,10 @@ get_playlists <- function(channelId,
     cache_key = cache_key,
     token = token
   )
-
   if (length(res$items)) {
     #   return(purrr::map(res$items, purrr::pluck, "contentDetails"))
-    return(purrr::map(res$items, purrr::pluck, "snippet"))
+    # return(purrr::map(res$items, purrr::pluck, "snippet"))
+    return(purrr::map(res$items, unlist, recursive = F))
   } else {
     return(NULL) # nocov
   }
