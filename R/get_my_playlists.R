@@ -82,12 +82,12 @@ get_channel_id <- function(handle,
   }
 }
 
-#'  Given a channelId, return the playlists.
+#' Given a channelId, return the playlists.
 
-#'  @param channelId The Youtube assigned channelId for a specific channel.
-#'  @param max_results The maximum number of results to return.
-#'  @inheritParams yt_call_api
-#'  @export
+#' @param channelId The Youtube assigned channelId for a specific channel.
+#' @param max_results The maximum number of results to return.
+#' @inheritParams yt_call_api
+#' @export
 get_playlists <- function(channelId,
                           max_results = 100,
                           client = yt_construct_client(),
