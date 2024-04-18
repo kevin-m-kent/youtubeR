@@ -30,3 +30,27 @@ with_mock_dir("../api/playlist_items", {
     })
   })
 })
+
+
+# -----------
+## jr added
+# -----------
+
+# 2024 - 04 - 16
+# NO MOCK
+
+# ------------------
+#   get_channel_id
+# ------------------
+get_channel_id("jimrothstein")
+# [1] "UClB5qWyXejlAwwkDAzJis-Q"
+
+# ----------------
+#   get_my_playlists
+# ----------------
+library(tibblify)
+z <- get_my_playlists()
+tibblify(z)
+
+#   get_playlist_items
+get_videos_for_playlistId()
