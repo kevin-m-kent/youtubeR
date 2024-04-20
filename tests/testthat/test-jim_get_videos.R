@@ -5,6 +5,7 @@
 
 testthat::test_that("retrieves videos", {
   playlistId <- "PLbcglKxZP5PMU2rNPBpYIzLTgzd5aOHw2"
+
   expect_no_error(
     get_videos_for_playlistId(playlistId)
   )
@@ -12,5 +13,6 @@ testthat::test_that("retrieves videos", {
 
 # seems to work
 z <- get_videos_for_playlistId(playlistId)
+z
 library(tibblify)
 tibblify(z)

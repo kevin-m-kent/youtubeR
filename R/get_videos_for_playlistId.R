@@ -25,7 +25,7 @@ get_videos_for_playlistId <- function(playlistId = NULL,
                                       token = NULL) {
   query <- list(
     part = "snippet",
-    fields = "items(snippet(title, publishedAt, description, videoOwnerChannelTitle))",
+    fields = "nextPageToken,items(snippet(title, publishedAt, description, videoOwnerChannelTitle))",
     maxResults = max_results,
     playlistId = playlistId
   )
@@ -37,6 +37,9 @@ get_videos_for_playlistId <- function(playlistId = NULL,
     cache_key = cache_key,
     token = token
   )
+
+  nextPageToken <- res[[1]] # res has 2 elements, 2nd has all video details
+  cat(nextPageToken, "\n")
 
   if (length(res$items)) {
     #   return(purrr::map(res$items, purrr::pluck, "contentDetails"))
