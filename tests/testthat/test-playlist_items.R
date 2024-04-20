@@ -48,9 +48,22 @@ get_channel_id("jimrothstein")
 # ----------------
 #   get_my_playlists
 # ----------------
+# TODO:   get all the playlists
 library(tibblify)
-z <- get_my_playlists()
-tibblify(z)
+test_that("get_my_playlists() works", {
+  expect_no_error(z <- get_my_playlists())
+  tibblify(z)
+})
 
+
+# ----------------------
 #   get_playlist_items
-get_videos_for_playlistId()
+# ----------------------
+test_that("get_videos_for_playlistId() is working", {
+            expect_no_error(
+  playlistId = "PLbcglKxZP5PMU2rNPBpYIzLTgzd5aOHw2"
+  z <- get_videos_for_playlistId(playlistId)
+t <- tibblify(z)
+dplyr::select(t, -publishedAt)
+  )
+})
