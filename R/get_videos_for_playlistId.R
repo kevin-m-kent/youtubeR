@@ -23,14 +23,15 @@ get_videos_for_playlistId <- function(playlistId = NULL,
                                       cache_disk = getOption("yt_cache_disk", FALSE),
                                       cache_key = getOption("yt_cache_key", NULL),
                                       token = NULL) {
+  query <- list(
+    part = "snippet",
+    fields = "items(snippet(title, publishedAt, description, videoOwnerChannelTitle))",
+    maxResults = max_results,
+    playlistId = playlistId
+  )
   res <- yt_call_api(
     endpoint = "playlistItems",
-    query = list(
-      part = "snippet",
-      fields = "items(snippet(title, publishedAt, description, videoOwnerChannelTitle))",
-      maxResults = max_results,
-      playlistId = playlistId
-    ),
+    query = query,
     client = client,
     cache_disk = cache_disk,
     cache_key = cache_key,
