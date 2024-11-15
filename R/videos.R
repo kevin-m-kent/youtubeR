@@ -74,8 +74,9 @@ yt_videos_insert <- function(video_path,
                              status = yt_schema_video_status(),
                              recording_date = datetime(),
                              client = yt_construct_client(),
-                             cache_disk = getOption("yt_cache_disk", FALSE),
-                             cache_key = getOption("yt_cache_key", NULL),
+                             cache_disk = getOption("youtuberR.cache_disk",
+                                                    FALSE),
+                             cache_key = getOption("youtuberR.cache_key", NULL),
                              token = NULL) {
   body <- list(
     metadata = list(
@@ -119,8 +120,9 @@ yt_videos_update <- function(video_id,
                              status = yt_schema_video_status(),
                              recording_date = datetime(),
                              client = yt_construct_client(),
-                             cache_disk = getOption("yt_cache_disk", FALSE),
-                             cache_key = getOption("yt_cache_key", NULL),
+                             cache_disk = getOption("youtuberR.cache_disk",
+                                                    FALSE),
+                             cache_key = getOption("youtuberR.cache_key", NULL),
                              token = NULL) {
   # HACK: This body should be compared to the existing body for this video.
   # Missing pieces should be filled in from the existing body.
@@ -160,8 +162,9 @@ yt_videos_update <- function(video_id,
 #' @export
 yt_videos_delete <- function(video_id,
                              client = yt_construct_client(),
-                             cache_disk = getOption("yt_cache_disk", FALSE),
-                             cache_key = getOption("yt_cache_key", NULL),
+                             cache_disk = getOption("youtuberR.cache_disk",
+                                                    FALSE),
+                             cache_key = getOption("youtuberR.cache_key", NULL),
                              token = NULL) {
   result <- yt_call_api(
     endpoint = "videos",
