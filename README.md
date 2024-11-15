@@ -50,7 +50,7 @@ pak::pak("kevin-m-kent/youtubeR")
 
 ### Step 1: Create an OAuth 2.0 client.
 
-We’ll add details here soon about the settings to apply in your client.
+We’ll add details here about the settings to apply in your client.
 You’ll need to enable the YouTube Data API v3.
 
 ``` r
