@@ -31,7 +31,7 @@ Long-term, we hope to implement the entire YouTube API.
 ## Installation
 
 ::: {.pkgdown-release}
-Install the released version of rapid from [CRAN](https://cran.r-project.org/):
+Install the released version of youtubeR from [CRAN](https://cran.r-project.org/):
 
 ``` r
 # Not yet!
@@ -40,7 +40,7 @@ install.packages("youtubeR")
 :::
 
 ::: {.pkgdown-devel}
-Install the development version of rapid from [GitHub](https://github.com/):
+Install the development version of youtubeR from [GitHub](https://github.com/):
 
 ``` r
 # install.packages("pak")
