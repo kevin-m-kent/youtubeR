@@ -22,13 +22,29 @@ implement the entire YouTube API.
 
 ## Installation
 
-You can install the development version of youtubeR from
-[GitHub](https://github.com/) with:
+<div class="pkgdown-release">
+
+Install the released version of rapid from
+[CRAN](https://cran.r-project.org/):
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("kevin-m-kent/youtubeR")
+# Not yet!
+install.packages("youtubeR")
 ```
+
+</div>
+
+<div class="pkgdown-devel">
+
+Install the development version of rapid from
+[GitHub](https://github.com/):
+
+``` r
+# install.packages("pak")
+pak::pak("kevin-m-kent/youtubeR")
+```
+
+</div>
 
 ## Setting up
 
