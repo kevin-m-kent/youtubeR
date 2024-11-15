@@ -2,7 +2,7 @@
 
     Code
       yt_construct_client("a", "b")
-    Message <cliMessage>
+    Message
       <httr2_oauth_client>
       name: youtube_data_api
       id: a
@@ -14,7 +14,7 @@
 
     Code
       yt_construct_client()
-    Message <cliMessage>
+    Message
       <httr2_oauth_client>
       name: youtube_data_api
       id: an_id
