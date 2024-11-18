@@ -1,114 +1,40 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://kevin-m-kent.github.io/youtubeR/404.html</loc>
-  </url>
-  <url>
-    <loc>https://kevin-m-kent.github.io/youtubeR/LICENSE-text.html</loc>
-  </url>
-  <url>
-    <loc>https://kevin-m-kent.github.io/youtubeR/LICENSE.html</loc>
-  </url>
-  <url>
-    <loc>https://kevin-m-kent.github.io/youtubeR/authors.html</loc>
-  </url>
-  <url>
-    <loc>https://kevin-m-kent.github.io/youtubeR/index.html</loc>
-  </url>
-  <url>
-    <loc>https://kevin-m-kent.github.io/youtubeR/reference/browse_gc_credentials.html</loc>
-  </url>
-  <url>
-    <loc>https://kevin-m-kent.github.io/youtubeR/reference/datetime.html</loc>
-  </url>
-  <url>
-    <loc>https://kevin-m-kent.github.io/youtubeR/reference/dot-add_body.html</loc>
-  </url>
-  <url>
-    <loc>https://kevin-m-kent.github.io/youtubeR/reference/dot-compact.html</loc>
-  </url>
-  <url>
-    <loc>https://kevin-m-kent.github.io/youtubeR/reference/dot-format_used_names.html</loc>
-  </url>
-  <url>
-    <loc>https://kevin-m-kent.github.io/youtubeR/reference/dot-get_token_noninteractive.html</loc>
-  </url>
-  <url>
-    <loc>https://kevin-m-kent.github.io/youtubeR/reference/dot-new_youtube_response.html</loc>
-  </url>
-  <url>
-    <loc>https://kevin-m-kent.github.io/youtubeR/reference/dot-parse_response.html</loc>
-  </url>
-  <url>
-    <loc>https://kevin-m-kent.github.io/youtubeR/reference/dot-prepare_body.html</loc>
-  </url>
-  <url>
-    <loc>https://kevin-m-kent.github.io/youtubeR/reference/dot-prepare_body_part.html</loc>
-  </url>
-  <url>
-    <loc>https://kevin-m-kent.github.io/youtubeR/reference/dot-prepare_request.html</loc>
-  </url>
-  <url>
-    <loc>https://kevin-m-kent.github.io/youtubeR/reference/dot-remove_missing.html</loc>
-  </url>
-  <url>
-    <loc>https://kevin-m-kent.github.io/youtubeR/reference/dot-str2csv.html</loc>
-  </url>
-  <url>
-    <loc>https://kevin-m-kent.github.io/youtubeR/reference/dot-yt_refresh_token.html</loc>
-  </url>
-  <url>
-    <loc>https://kevin-m-kent.github.io/youtubeR/reference/dot-yt_req_auth.html</loc>
-  </url>
-  <url>
-    <loc>https://kevin-m-kent.github.io/youtubeR/reference/get_my_channel_detail_playlist_ids.html</loc>
-  </url>
-  <url>
-    <loc>https://kevin-m-kent.github.io/youtubeR/reference/get_playlist_items.html</loc>
-  </url>
-  <url>
-    <loc>https://kevin-m-kent.github.io/youtubeR/reference/get_playlist_video_ids.html</loc>
-  </url>
-  <url>
-    <loc>https://kevin-m-kent.github.io/youtubeR/reference/get_upload_playlist_id.html</loc>
-  </url>
-  <url>
-    <loc>https://kevin-m-kent.github.io/youtubeR/reference/get_video_processing_details.html</loc>
-  </url>
-  <url>
-    <loc>https://kevin-m-kent.github.io/youtubeR/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>https://kevin-m-kent.github.io/youtubeR/reference/youtubeR-package.html</loc>
-  </url>
-  <url>
-    <loc>https://kevin-m-kent.github.io/youtubeR/reference/yt_authenticate.html</loc>
-  </url>
-  <url>
-    <loc>https://kevin-m-kent.github.io/youtubeR/reference/yt_call_api.html</loc>
-  </url>
-  <url>
-    <loc>https://kevin-m-kent.github.io/youtubeR/reference/yt_construct_client.html</loc>
-  </url>
-  <url>
-    <loc>https://kevin-m-kent.github.io/youtubeR/reference/yt_has_client_envvars.html</loc>
-  </url>
-  <url>
-    <loc>https://kevin-m-kent.github.io/youtubeR/reference/yt_schema_video_localization.html</loc>
-  </url>
-  <url>
-    <loc>https://kevin-m-kent.github.io/youtubeR/reference/yt_schema_video_snippet.html</loc>
-  </url>
-  <url>
-    <loc>https://kevin-m-kent.github.io/youtubeR/reference/yt_schema_video_status.html</loc>
-  </url>
-  <url>
-    <loc>https://kevin-m-kent.github.io/youtubeR/reference/yt_videos_delete.html</loc>
-  </url>
-  <url>
-    <loc>https://kevin-m-kent.github.io/youtubeR/reference/yt_videos_insert.html</loc>
-  </url>
-  <url>
-    <loc>https://kevin-m-kent.github.io/youtubeR/reference/yt_videos_update.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://kevin-m-kent.github.io/youtubeR/404.html</loc></url>
+<url><loc>https://kevin-m-kent.github.io/youtubeR/LICENSE-text.html</loc></url>
+<url><loc>https://kevin-m-kent.github.io/youtubeR/LICENSE.html</loc></url>
+<url><loc>https://kevin-m-kent.github.io/youtubeR/authors.html</loc></url>
+<url><loc>https://kevin-m-kent.github.io/youtubeR/index.html</loc></url>
+<url><loc>https://kevin-m-kent.github.io/youtubeR/reference/browse_gc_credentials.html</loc></url>
+<url><loc>https://kevin-m-kent.github.io/youtubeR/reference/datetime.html</loc></url>
+<url><loc>https://kevin-m-kent.github.io/youtubeR/reference/dot-add_body.html</loc></url>
+<url><loc>https://kevin-m-kent.github.io/youtubeR/reference/dot-compact.html</loc></url>
+<url><loc>https://kevin-m-kent.github.io/youtubeR/reference/dot-format_used_names.html</loc></url>
+<url><loc>https://kevin-m-kent.github.io/youtubeR/reference/dot-get_token_noninteractive.html</loc></url>
+<url><loc>https://kevin-m-kent.github.io/youtubeR/reference/dot-new_youtube_response.html</loc></url>
+<url><loc>https://kevin-m-kent.github.io/youtubeR/reference/dot-parse_response.html</loc></url>
+<url><loc>https://kevin-m-kent.github.io/youtubeR/reference/dot-prepare_body.html</loc></url>
+<url><loc>https://kevin-m-kent.github.io/youtubeR/reference/dot-prepare_body_part.html</loc></url>
+<url><loc>https://kevin-m-kent.github.io/youtubeR/reference/dot-prepare_request.html</loc></url>
+<url><loc>https://kevin-m-kent.github.io/youtubeR/reference/dot-remove_missing.html</loc></url>
+<url><loc>https://kevin-m-kent.github.io/youtubeR/reference/dot-str2csv.html</loc></url>
+<url><loc>https://kevin-m-kent.github.io/youtubeR/reference/dot-yt_refresh_token.html</loc></url>
+<url><loc>https://kevin-m-kent.github.io/youtubeR/reference/dot-yt_req_auth.html</loc></url>
+<url><loc>https://kevin-m-kent.github.io/youtubeR/reference/get_my_channel_detail_playlist_ids.html</loc></url>
+<url><loc>https://kevin-m-kent.github.io/youtubeR/reference/get_playlist_items.html</loc></url>
+<url><loc>https://kevin-m-kent.github.io/youtubeR/reference/get_playlist_video_ids.html</loc></url>
+<url><loc>https://kevin-m-kent.github.io/youtubeR/reference/get_upload_playlist_id.html</loc></url>
+<url><loc>https://kevin-m-kent.github.io/youtubeR/reference/get_video_processing_details.html</loc></url>
+<url><loc>https://kevin-m-kent.github.io/youtubeR/reference/index.html</loc></url>
+<url><loc>https://kevin-m-kent.github.io/youtubeR/reference/youtubeR-package.html</loc></url>
+<url><loc>https://kevin-m-kent.github.io/youtubeR/reference/yt_authenticate.html</loc></url>
+<url><loc>https://kevin-m-kent.github.io/youtubeR/reference/yt_call_api.html</loc></url>
+<url><loc>https://kevin-m-kent.github.io/youtubeR/reference/yt_construct_client.html</loc></url>
+<url><loc>https://kevin-m-kent.github.io/youtubeR/reference/yt_has_client_envvars.html</loc></url>
+<url><loc>https://kevin-m-kent.github.io/youtubeR/reference/yt_schema_video_localization.html</loc></url>
+<url><loc>https://kevin-m-kent.github.io/youtubeR/reference/yt_schema_video_snippet.html</loc></url>
+<url><loc>https://kevin-m-kent.github.io/youtubeR/reference/yt_schema_video_status.html</loc></url>
+<url><loc>https://kevin-m-kent.github.io/youtubeR/reference/yt_videos_delete.html</loc></url>
+<url><loc>https://kevin-m-kent.github.io/youtubeR/reference/yt_videos_insert.html</loc></url>
+<url><loc>https://kevin-m-kent.github.io/youtubeR/reference/yt_videos_update.html</loc></url>
 </urlset>
+
