@@ -22,19 +22,35 @@ implement the entire YouTube API.
 
 ## Installation
 
-You can install the development version of youtubeR from
-[GitHub](https://github.com/) with:
+<div class="pkgdown-release">
+
+Install the released version of youtubeR from
+[CRAN](https://cran.r-project.org/):
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("kevin-m-kent/youtubeR")
+# Not yet!
+install.packages("youtubeR")
 ```
+
+</div>
+
+<div class="pkgdown-devel">
+
+Install the development version of youtubeR from
+[GitHub](https://github.com/):
+
+``` r
+# install.packages("pak")
+pak::pak("kevin-m-kent/youtubeR")
+```
+
+</div>
 
 ## Setting up
 
 ### Step 1: Create an OAuth 2.0 client.
 
-We’ll add details here soon about the settings to apply in your client.
+We’ll add details here about the settings to apply in your client.
 You’ll need to enable the YouTube Data API v3.
 
 ``` r

@@ -7,7 +7,7 @@ library(httptest2)
 
 # Note: This token was only good for a short time while I recorded the tests.
 # We'll need to re-set this to re-record.
-yt_token <- "ya29.a0Ael9sCM5b46cHOVouZChRo460xsIS7FDWnmubLDIigsqMacQ1hMGgwllPDv805Qk9mUmUKgbrdceIBR-x5AuaSq2q7-5jCDTmwj9je52WKGP-auJHhjDDAYgyeK8uVbAWR8q6cIraefdiX4jyFjQGZgui_yq4O8aCgYKAcgSARMSFQF4udJhN6eK02zXKpzm7178TMcIjA0166"
+yt_token <- "ya29.a0AeDClZBY--2fFlORkes-C0K1eWxM1OGwBJCLkPn9ZSS-dTqV3gHKF6mG0_9SwhOneJiCqPZl-ZrJVHRDzyAn0YsEmEkUolh-00vplWmxHDNd2OtIiKS_8qiminRPjuZ0AZnpoIyRgoXDEHQWIqtoRqYZYt7e1SIRKqVO-7QoaCgYKATgSARMSFQHGX2MiScABympu_N5YJVv4lcoRAw0175"
 withr::defer(
   rm(yt_token),
   teardown_env()

@@ -118,7 +118,8 @@ yt_authenticate <- function(client = yt_construct_client(),
     token <- httr2::oauth_flow_auth_code(
       client = client,
       auth_url = "https://accounts.google.com/o/oauth2/v2/auth",
-      scope = "https://www.googleapis.com/auth/youtube"
+      scope = "https://www.googleapis.com/auth/youtube",
+      redirect_uri = "http://127.0.0.1:8888"
     )
 
     the[[rlang::hash(client)]] <- token
@@ -184,8 +185,8 @@ yt_authenticate <- function(client = yt_construct_client(),
 #' @keywords internal
 .yt_req_auth <- function(request,
                          client = yt_construct_client(),
-                         cache_disk = getOption("yt_cache_disk", FALSE),
-                         cache_key = getOption("yt_cache_key", NULL),
+                         cache_disk = getOption("youtuberR.cache_disk", FALSE),
+                         cache_key = getOption("youtuberR.cache_key", NULL),
                          token = NULL) {
   if (!is.null(token)) {
     if (inherits(token, "httr2_token")) {
@@ -214,7 +215,8 @@ yt_authenticate <- function(client = yt_construct_client(),
       auth_url = "https://accounts.google.com/o/oauth2/v2/auth",
       scope = "https://www.googleapis.com/auth/youtube",
       cache_disk = cache_disk,
-      cache_key = cache_key
+      cache_key = cache_key,
+      redirect_uri = "http://127.0.0.1:8888"
     )
   )
 }
