@@ -2,7 +2,7 @@ pandoc: 3.1.11
 pkgdown: 2.1.1
 pkgdown_sha: ~
 articles: {}
-last_built: 2024-11-18T13:37Z
+last_built: 2025-02-03T20:41Z
 urls:
   reference: https://kevin-m-kent.github.io/youtubeR/reference
   article: https://kevin-m-kent.github.io/youtubeR/articles
