@@ -119,7 +119,7 @@ yt_authenticate <- function(client = yt_construct_client(),
       client = client,
       auth_url = "https://accounts.google.com/o/oauth2/v2/auth",
       scope = "https://www.googleapis.com/auth/youtube",
-      redirect_uri = "http://127.0.0.1:8888"
+      redirect_uri = "http://127.0.0.1:8888/authorize/"
     )
 
     the[[rlang::hash(client)]] <- token
@@ -216,7 +216,7 @@ yt_authenticate <- function(client = yt_construct_client(),
       scope = "https://www.googleapis.com/auth/youtube",
       cache_disk = cache_disk,
       cache_key = cache_key,
-      redirect_uri = "http://127.0.0.1:8888"
+      redirect_uri = "http://127.0.0.1:8888/authorize/"
     )
   )
 }
